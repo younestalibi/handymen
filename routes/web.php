@@ -30,15 +30,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/home/service/{id}', [HomeController::class, 'serviceDetail'])->name('home-service-detail');
-Route::get('/home/contact', [HomeController::class, 'contact'])->name('home-contact');
 
+//Customer
+Route::group(['prefix' => 'home'], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/service/{id}', [HomeController::class, 'serviceDetail'])->name('home-service-detail');
+    Route::get('/contact', [HomeController::class, 'contact'])->name('home-contact');
+});
 
 //administrator
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
-    //home
+    //home-admin
     Route::get("/",[HomeController::class, 'admin'])->name('home-admin');
+    
     //profile
     Route::group(['prefix' => 'profile'], function () {
         Route::get('index', [ProfileController::class, 'index'])->name('profile_index');
@@ -83,20 +87,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::post('update', [BookingController::class, 'update'])->name('booking-update');
     });
 
-    //agreement
-    // Route::group(['prefix' => 'agreement'], function () {
-    //     Route::get('index/{id}', [AgreementController::class, 'index'])->name('agreement-index');
-    // });
+
 });
 
-//Customer
-// Route::group(['prefix' => 'customer', 'middleware' => ['auth']], function () {
-//     //orders
-//     Route::group(['prefix' => 'order'], function () {
-//         Route::get('index', [OrderController::class, 'index'])->name('order-index');
-//         Route::get('create/{id}', [OrderController::class, 'create'])->name('order-create');
-
-//         Route::post('store/{id}', [OrderController::class, 'store'])->name('order-store');
-//         Route::get('update/{id}', [OrderController::class, 'update'])->name('order-update');
-//     });
-// });
