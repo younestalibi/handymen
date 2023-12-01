@@ -23,7 +23,6 @@ class ServiceController extends Controller
     {
         $services = Service::paginate(3);
         $myProfile = User::find(Auth::user()->id)->Profile;
-        // return view('cars.index', compact('myProfile', 'cars', 'OraderCount'));
         return view('service.index', compact('myProfile', 'services'));
     }
 
@@ -36,7 +35,6 @@ class ServiceController extends Controller
     {
         $myProfile = User::find(Auth::user()->id)->Profile;
         $categories=Category::all();
-        // dd($categories);
         return view('service.create', compact('myProfile','categories'));
     }
 
@@ -65,7 +63,7 @@ class ServiceController extends Controller
             $validated['user_id']=auth()->user()->id;
             $validated['picture']= $fileName;
             $service->fill($validated)->save();   
-            return redirect()->back()->with('success', 'New Car Created successfully');
+            return redirect()->back()->with('success', 'New Service Created successfully');
         }
     }
     /**
@@ -133,7 +131,7 @@ class ServiceController extends Controller
         $service->fill($validated)->save();
 
 
-        return redirect()->route('service-index')->with('success', 'New Car Created successfully');
+        return redirect()->route('service-index')->with('success', 'New Service Created successfully');
     }
 
     /**
@@ -144,7 +142,7 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        $service = Service::find($id);
+        $service = Service::findOrFail($id);
         $service->delete();
         return response()->json([
             'status' => true,

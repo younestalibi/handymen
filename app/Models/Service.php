@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\Booking;
 use App\Models\Category;
 
 class Service extends Model
@@ -12,13 +13,17 @@ class Service extends Model
     use HasFactory;
     protected $fillable = [
         'name', 'user_id', 'category_id',
-        'duration', 'description', 'status',
-        'price','picture','features'
+        'duration', 'description',
+        'picture','features'
     ];
     protected $casts = [
         'features' => 'array',
     ];
 
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 
     public function category()
     {

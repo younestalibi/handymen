@@ -16,13 +16,11 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('user_id')->constrained(); 
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->integer('duration');
             $table->text('description');
-            $table->enum('status', ['pending', 'progress', 'done'])->default('pending');;
             $table->string('picture');
-            $table->decimal('price')->nullable();
             $table->json('features')->nullable();
             $table->timestamps();
         });

@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AgreementController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
@@ -35,6 +37,8 @@ Route::get('/home/contact', [HomeController::class, 'contact'])->name('home-cont
 
 //administrator
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+    //home
+    Route::get("/",[HomeController::class, 'admin'])->name('home-admin');
     //profile
     Route::group(['prefix' => 'profile'], function () {
         Route::get('index', [ProfileController::class, 'index'])->name('profile_index');
@@ -44,27 +48,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::post('destroy', [ProfileController::class, 'destroy'])->name('user_destroy');
     });
 
-
     //users
     Route::group(['prefix' => 'users'], function () {
         Route::get('index', [UserController::class, 'index'])->name('users_index');
-        // Route::get('edit/{id}', [UserController::class, 'edit'])->name('users_edit');
         Route::get('destroy/{id}', [UserController::class, 'destroy'])->name('users_destroy');
-
-        // Route::post('update', [UserController::class, 'update'])->name('users_update');
     });
 
-
-
-    //cars
-    Route::group(['prefix' => 'cars'], function () {
-        Route::get('index', [CarController::class, 'index'])->name('cars-index');
-        Route::get('create', [CarController::class, 'create'])->name('cars-create');
-        Route::get('edit/{id}', [CarController::class, 'edit'])->name('cars-edit');
-        Route::post('destroy/{id}', [CarController::class, 'destroy'])->name('cars-destroy');
-        Route::post('store', [CarController::class, 'store'])->name('cars-store');
-        Route::post('update', [CarController::class, 'update'])->name('cars-update');
-    });
     //service
     Route::group(['prefix' => 'services'], function () {
         Route::get('index', [ServiceController::class, 'index'])->name('service-index');
@@ -74,7 +63,25 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::post('store', [ServiceController::class, 'store'])->name('service-store');
         Route::post('update', [ServiceController::class, 'update'])->name('service-update');
     });
-
+    //categorie
+    Route::group(['prefix' => 'categories'], function () {
+        Route::get('index', [CategoryController::class, 'index'])->name('categorie-index');
+        Route::get('create', [CategoryController::class, 'create'])->name('categorie-create');
+        Route::get('edit/{id}', [CategoryController::class, 'edit'])->name('categorie-edit');
+        Route::post('destroy/{id}', [CategoryController::class, 'destroy'])->name('categorie-destroy');
+        Route::post('store', [CategoryController::class, 'store'])->name('categorie-store');
+        Route::post('update', [CategoryController::class, 'update'])->name('categorie-update');
+    });
+    
+    //booking 
+    Route::group(['prefix' => 'bookings'], function () {
+        Route::get('index', [BookingController::class, 'index'])->name('booking-index');
+        Route::get('create', [BookingController::class, 'create'])->name('booking-create');
+        Route::get('edit/{id}', [BookingController::class, 'edit'])->name('booking-edit');
+        Route::post('destroy/{id}', [BookingController::class, 'destroy'])->name('booking-destroy');
+        Route::post('store', [BookingController::class, 'store'])->name('booking-store');
+        Route::post('update', [BookingController::class, 'update'])->name('booking-update');
+    });
 
     //agreement
     // Route::group(['prefix' => 'agreement'], function () {

@@ -6,13 +6,13 @@
 @section('m-content')
     <div class="row">
         <div class="col-12">
-            <h1 class="display-1 font-monospace text-primary"> Servcies</h1>
+            <h1 class="display-1 font-monospace text-primary"> Lessons</h1>
         </div>
         <div class="col-lg-12 mb-4">
             <div class="card shadow-lg rounded">
                 <div class="card-body">
                     <div class="card-header font-monospace fs-3 text-info px-0">
-                        Services Number
+                        Lessons Number
                     </div>
                     <div class="card-title d-flex align-items-center justify-content-between">
                         <div class="fs-1">
@@ -23,7 +23,7 @@
                             </span>
                         </div>
                         <div class="fs-1">
-                            <span class="rounded text-info">{{ $serviceCount }}</span>
+                            <span class="rounded text-info">{{ $carsCount }}</span>
                         </div>
                     </div>
                 </div>
@@ -49,15 +49,15 @@
             </div>
         </div> --}}
     </div>
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-12">
-            <h1 class="display-1 font-monospace text-primary">Bookings</h1>
+            <h1 class="display-1 font-monospace text-primary"> Orders</h1>
         </div>
         <div class="col-lg-4 col-md-12 col-4 mb-4">
             <div class="card shadow-lg rounded">
                 <div class="card-body">
                     <div class="card-header fs-3 font-monospace text-primary px-0">
-                        Total Bookings
+                        Total Orders
                     </div>
                     <div class="card-title d-flex align-items-center justify-content-between">
                         <div class="fs-1">
@@ -77,7 +77,7 @@
             <div class="card shadow-lg rounded">
                 <div class="card-body">
                     <div class="card-header fs-3 font-monospace text-danger px-0">
-                        Bookings Incomplete
+                        Orader Incomplete
                     </div>
                     <div class="card-title d-flex align-items-center justify-content-between">
                         <div class="fs-1">
@@ -114,7 +114,7 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div> --}}
 @endsection
 
 

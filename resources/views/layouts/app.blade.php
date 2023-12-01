@@ -70,7 +70,7 @@
 
      <!-- Main JS -->
      <script src="{{ asset('assets/js/main.js') }}"></script>
-
+ 
      <!--Toastr-->
      <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
      <!--sweetalert2-->

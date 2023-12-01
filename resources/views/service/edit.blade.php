@@ -94,34 +94,7 @@
                                         >{{ $feature["description"] }}</textarea> 
                                     </div>
                                     @endforeach
-                                    @endif
-
-=
-                                    <div class="col-md-4 col-sm-12 mb-3">                                   
-                                        <label for="status" class="form-label" for="basic-default-category_id">Select a Status:</label>
-                                        <select id="status" name="status" placeholder="status" 
-                                        class="form-control @error('status') is-invalid @enderror " value="{{old('status')}}">
-                                            <option value="pending" {{ $service->status == 'pending' ? 'selected' : '' }}>Pending</option>
-                                            <option value="progress" {{ $service->status == 'progress' ? 'selected' : '' }}>Progress</option>
-                                            <option value="done" {{ $service->status == 'done' ? 'selected' : '' }}>Done</option>
-                                        </select>
-                                        @error('status')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="col-md-4 col-sm-12 mb-3">
-                                        <label class="form-label" for="basic-default-price">Price of Service</label>
-                                        <input type="number" class="form-control @error('price') is-invalid @enderror " value="{{ old('price', $service->price) }}"
-                                            id="price" name="price" placeholder="Price of service">
-                                        @error('price')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
+                                    @endif        
                                
                                     <div
                                         class="col-md-12 col-sm-12 mb-3 d-flex justify-content-start align-items-center gap-4">

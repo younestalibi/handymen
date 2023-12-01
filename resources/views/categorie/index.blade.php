@@ -1,7 +1,7 @@
 @extends('layouts.container')
 
 @section('title')
-    All Services
+    All Categories
 @endsection
 
 
@@ -12,13 +12,13 @@
         <div class="container-xxl flex-grow-1">
             <div class="row">
                 <div class="col-md-12">
-                    <!-- All Services -->
+                    <!-- All Categores -->
                     <div class="card">
                         <h5 class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
-                                All Services
-                                <a href="{{ route('service-create') }}" class="btn btn-info">
-                                    New Service &nbsp; <span class="tf-icons fa-solid fa-angles-right"></span>
+                                All Categories
+                                <a href="{{ route('categorie-create') }}" class="btn btn-info">
+                                    New Categorie &nbsp; <span class="tf-icons fa-solid fa-angles-right"></span>
                                 </a>
                             </div>
                         </h5>
@@ -28,39 +28,29 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>
-                                        <th>Category</th>
-                                        <th>Duration</th>
                                         <th>Description</th>
-                                        <th>picture</th>
                                         <th>Created</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                @if (count($services) > 0)
+                                @if (count($categories) > 0)
                                     <tbody class="table-border-bottom-0">
                                         @php
                                             $count = 1;
                                         @endphp
-                                        @foreach ($services as $service)
+                                        @foreach ($categories as $categorie)
                                             <tr>
                                                 <td>{{ $count++ }}</td>
-                                                <td>{{ $service->name }}</td>
-                                                <td>{{ $service->category->name }}</td>
-                                                <td>{{ $service->duration }}H</td>
-                                                <td>{{ Str::limit($service->description, $limit = 50, $end = '...')  }}</td>
-                                                <td class="col-2">
-                                                    <img class="img-fluid"
-                                                        src="{{ asset('users/services/' . $service->picture) }}" />
-                                                </td>
-                                                <td>{{ $service->created_at->diffforhumans() }}</td>
-                                                {{-- <td>{{ $service->updated_at->diffforhumans() }}</td> --}}
+                                                <td>{{ $categorie->name }}</td>
+                                                <td>{{ Str::limit($categorie->description, $limit = 100, $end = '...')  }}</td>
+                                                <td>{{ $categorie->created_at->diffforhumans() }}</td>
                                                 <td>
-                                                    <a href="{{ route('service-edit', ['id' => $service->id]) }}"
-                                                        id="{{ $service->id }}"
+                                                    <a href="{{ route('categorie-edit', ['id' => $categorie->id]) }}"
+                                                        id="{{ $categorie->id }}"
                                                         class="btn btnEditCar btn-sm btn-s rounded-pill btn-icon btn-outline-info">
                                                         <span class="tf-icons bx bx-edit"></span>
                                                     </a>
-                                                    <a href="" id="{{ $service->id }}"
+                                                    <a href="" id="{{ $categorie->id }}"
                                                         class="btn btnDeleteCar btn-sm btn-s rounded-pill btn-icon btn-outline-danger">
                                                         <span class="tf-icons fa-solid fa-trash"></span>
                                                     </a>
@@ -72,7 +62,7 @@
                             </table>
                         </div>
                         <div class="card-footer">
-                            {{ $services->links('pagination::bootstrap-4') }}
+                            {{ $categories->links('pagination::bootstrap-4') }}
 
                         </div>
                     </div>
@@ -89,13 +79,13 @@
 @section('scripts')
     @if (session('success'))
         <script>
-            toastr.success('{{ session('+success+') }}');
+            toastr.success("{{ session('success') }}");
         </script>
     @endif
 
     @if (session('error'))
         <script>
-            toastr.error('{{ session('+error+') }}');
+            toastr.error("{{ session('error') }}");
         </script>
     @endif
     <script>
@@ -121,7 +111,7 @@
                     if (result.isConfirmed) {
                         $.ajax({
                             type: "POST",
-                            url: `/admin/services/destroy/${id}`,  
+                            url: `/admin/categories/destroy/${id}`,  
                             dataType: "JSON",
                             success: function(response) {
                                 Swal.fire(

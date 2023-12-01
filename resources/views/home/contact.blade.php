@@ -651,12 +651,12 @@
             href="http://127.0.0.1:8000/contact-assets/css/redux-framework-redux-core-assets-css-extendify-utilities.css"
             media="all"
         />
-        <link
+        <!-- <link
             rel="stylesheet"
             id="contact-form-7-css"
             href="http://127.0.0.1:8000/contact-assets/css/contact-form-7-includes-css-styles.css"
             media="all"
-        />
+        /> -->
         <style id="woocommerce-inline-inline-css">
             .woocommerce form .form-row .required {
                 visibility: visible;
@@ -909,7 +909,7 @@
             content="https://handymentocall.com/wp-content/uploads/2023/05/cropped-Untitled-2-1-270x270.png"
         />
         <style id="wp-custom-css">
-            .main-menu ul{ 	align-content: center: }
+            .main-menu ul{ 	align-content: center; }
         </style>
         <style
             id="plumer_opt-dynamic-css"
@@ -930,6 +930,19 @@
     <body
         class="page-template page-template-template-builder page-template-template-builder-php page page-id-42 wp-custom-logo wp-embed-responsive theme-plumer woocommerce-no-js elementor-default elementor-kit-7 elementor-page elementor-page-42"
     >
+    <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
+<script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+    @if (session('success'))
+        <script>
+            toastr.success("{{ session('success') }}");
+        </script>
+    @endif
+
+    @if (session('error'))
+        <script>
+            toastr.error("{{ session('error') }}");
+        </script>
+    @endif
         <header>
             <div
                 data-elementor-type="wp-post"
@@ -1040,8 +1053,7 @@
                                             <form
                                                 role="search"
                                                 method="get"
-                                                action="https://handymentocall.com/"
-                                            >
+                                                action="https://handymentocall.com/">
                                                 <input
                                                     value=""
                                                     class="border-theme"
@@ -1581,153 +1593,108 @@
                                                                                     ></p>
                                                                                     <ul></ul>
                                                                                 </div>
-                                                                                <form
-                                                                                    action="/contact/#wpcf7-f1174-p42-o1"
-                                                                                    method="post"
-                                                                                    class="wpcf7-form init"
-                                                                                    aria-label="Contact form"
-                                                                                    novalidate="novalidate"
-                                                                                    data-status="init"
-                                                                                >
-                                                                                  
+                                                                                <form action="{{ route('booking-store') }}" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+                                                                                @csrf
                                                                                     <div class="contact-form" >
-                                                                                        <div
-                                                                                            class="row"
-                                                                                        >
-                                                                                            <div
-                                                                                                class="form-group col-md-6"
-                                                                                            >
+                                                                                        <div class="row" >
+                                                                                            <div class="form-group col-md-6">
                                                                                                 <span
                                                                                                     class="wpcf7-form-control-wrap"
-                                                                                                    data-name="text-368"
+                                                                                                    data-name="name"
                                                                                                     ><input
                                                                                                         size="40"
-                                                                                                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
-                                                                                                        id="text-368"
+                                                                                                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control @error('name') is-invalid @enderror"
+                                                                                                        id="name"
                                                                                                         aria-required="true"
                                                                                                         aria-invalid="false"
                                                                                                         placeholder="Your Name"
-                                                                                                        value=""
+                                                                                                        value="{{old('name')}}"
                                                                                                         type="text"
-                                                                                                        name="text-368"
+                                                                                                        name="name"
                                                                                                 /></span>
+                                                                                                @error('name')
+                                                                                                    <small style="display: inline-block;" class="invalid-feedback" role="alert">
+                                                                                                        <strong>{{ $message }}</strong>
+                                                                                                    </small>
+                                                                                                @enderror
                                                                                             </div>
-                                                                                            <div
-                                                                                                class="form-group col-md-6"
-                                                                                            >
-                                                                                                <span
-                                                                                                    class="wpcf7-form-control-wrap"
-                                                                                                    data-name="email-248"
-                                                                                                    ><input
+                                                                                            <div class="form-group col-md-6" >
+                                                                                                <span class="wpcf7-form-control-wrap" data-name="email" >
+                                                                                                    <input
                                                                                                         size="40"
-                                                                                                        class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control"
-                                                                                                        id="email-248"
+                                                                                                        class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control @error('email') is-invalid @enderror"
+                                                                                                        id="email"
                                                                                                         aria-required="true"
                                                                                                         aria-invalid="false"
                                                                                                         placeholder="Email Address"
-                                                                                                        value=""
+                                                                                                        value="{{old('email')}}"
                                                                                                         type="email"
-                                                                                                        name="email-248"
+                                                                                                        name="email"
                                                                                                 /></span>
+                                                                                                @error('email')
+                                                                                                    <small style="display: inline-block;" class="invalid-feedback" role="alert">
+                                                                                                        <strong>{{ $message }}</strong>
+                                                                                                    </small>
+                                                                                                @enderror
                                                                                             </div>
                                                                                             <div
                                                                                                 class="form-group col-md-6"
                                                                                             >
                                                                                                 <span
                                                                                                     class="wpcf7-form-control-wrap"
-                                                                                                    data-name="tel-278"
+                                                                                                    data-name="phone"
                                                                                                     ><input
                                                                                                         size="40"
-                                                                                                        class="wpcf7-form-control wpcf7-tel wpcf7-text wpcf7-validates-as-tel form-control"
-                                                                                                        id="tel-278"
+                                                                                                        class="wpcf7-form-control wpcf7-tel wpcf7-text wpcf7-validates-as-tel form-control @error('phone') is-invalid @enderror"
+                                                                                                        id="phone"
                                                                                                         aria-invalid="false"
                                                                                                         placeholder="Phone Number"
-                                                                                                        value=""
-                                                                                                        type="tel"
-                                                                                                        name="tel-278"
+                                                                                                        value="{{old('phone')}}"
+                                                                                                        type="text"
+                                                                                                        name="phone"
                                                                                                 /></span>
+                                                                                                @error('phone')
+                                                                                                    <small style="display: inline-block;" class="invalid-feedback" role="alert">
+                                                                                                        <strong>{{ $message }}</strong>
+                                                                                                    </small>
+                                                                                                @enderror
                                                                                             </div>
                                                                                             <div
                                                                                                 class="form-group col-md-6"
                                                                                             >
-                                                                                                <span
-                                                                                                    class="wpcf7-form-control-wrap"
-                                                                                                    data-name="menu-552"
-                                                                                                    ><select
-                                                                                                        class="wpcf7-form-control wpcf7-select form-select"
-                                                                                                        id="menu-552"
-                                                                                                        aria-invalid="false"
-                                                                                                        name="menu-552"
-                                                                                                    >
-                                                                                                        <option
-                                                                                                            value="Select service"
-                                                                                                        >
-                                                                                                            Select
-                                                                                                            service
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="Installation Service"
-                                                                                                        >
-                                                                                                            Installation
-                                                                                                            Service
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="Plumbing Service"
-                                                                                                        >
-                                                                                                            Plumbing
-                                                                                                            Service
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="Electrical Service"
-                                                                                                        >
-                                                                                                            Electrical
-                                                                                                            Service
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="Carpenter Service"
-                                                                                                        >
-                                                                                                            Carpenter
-                                                                                                            Service
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="HVAC Service"
-                                                                                                        >
-                                                                                                            HVAC
-                                                                                                            Service
-                                                                                                        </option>
-                                                                                                        <option
-                                                                                                            value="Painting Service"
-                                                                                                        >
-                                                                                                            Painting
-                                                                                                            Service
-                                                                                                        </option>
-                                                                                                    </select></span
-                                                                                                >
+                                                                                                <span class="wpcf7-form-control-wrap" data-name="service_id" >
+                                                                                                    <select class="wpcf7-form-control wpcf7-select form-select @error('service_id') is-invalid @enderror" id="service_id" name="service_id" >
+                                                                                                        <option value="" disabled selected>Select service</option>
+                                                                                                        @foreach($services as $service)
+                                                                                                        <option  value="{{$service->id}}"  {{ old('service_id') == $service->id ? 'selected' : '' }}>{{$service->name}}</option>
+                                                                                                        @endforeach  
+                                                                                                    </select></span>
+                                                                                                    @error('service_id')
+                                                                                                    <small style="display: inline-block;" class="invalid-feedback" role="alert">
+                                                                                                        <strong>{{ $message }}</strong>
+                                                                                                    </small>
+                                                                                                    @enderror
                                                                                             </div>
                                                                                             <div
                                                                                                 class="form-group col-12"
                                                                                             >
                                                                                                 <span
                                                                                                     class="wpcf7-form-control-wrap"
-                                                                                                    data-name="textarea-38"
+                                                                                                    data-name="message"
                                                                                                 >
                                                                                                     <textarea
                                                                                                         cols="40"
                                                                                                         rows="10"
                                                                                                         class="wpcf7-form-control wpcf7-textarea form-control"
-                                                                                                        id="textarea-38"
+                                                                                                        id="message"
                                                                                                         aria-invalid="false"
                                                                                                         placeholder="Your Message"
-                                                                                                        name="textarea-38"
-                                                                                                    ></textarea>
+                                                                                                        name="message"
+                                                                                                    >{{old('message')}}</textarea>
                                                                                                 </span>
                                                                                             </div>
-                                                                                            <div
-                                                                                                class="form-btn col-12"
-                                                                                            >
-                                                                                                <button
-                                                                                                    class="themeholy-btn btn-fw WPCF7"
-                                                                                                >
+                                                                                            <div  class="form-btn col-12" >
+                                                                                                <button class="themeholy-btn btn-fw WPCF7" type="submit"  >
                                                                                                     Submit
                                                                                                     Now
                                                                                                 </button>
@@ -2316,7 +2283,7 @@
             href="http://127.0.0.1:8000/contact-assets/css/elementor-assets-lib-font-awesome-css-brands.min.css"
             media="all"
         />
-        <script
+        <!-- <script
             src="http://127.0.0.1:8000/contact-assets/js/contact-form-7-includes-swv-js-index.js"
             id="swv-js"
         ></script>
@@ -2331,7 +2298,7 @@
         <script
             src="http://127.0.0.1:8000/contact-assets/js/contact-form-7-includes-js-index.js"
             id="contact-form-7-js"
-        ></script>
+        ></script> -->
         <script id="plumer-ajax-js-extra">
             var plumerajax = {
                 action_url:

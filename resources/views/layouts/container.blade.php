@@ -4,9 +4,9 @@
     <style>
         .notify{
             position: absolute;
-    top: 22px;
-    z-index: 1;
-    left: 21px;
+            top: 22px;
+            z-index: 1;
+            left: 21px;
         }
     </style>
     <div class="layout-wrapper layout-content-navbar">
@@ -27,8 +27,8 @@
 
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
-                    <li class="menu-item @if (request()->routeIs('home')) active open @endif">
-                        <a href="{{ route('home') }}" class="menu-link">
+                    <li class="menu-item @if (request()->routeIs('home-admin')) active open @endif">
+                        <a href="{{ route('home-admin') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
@@ -37,13 +37,7 @@
                     {{-- <li class="menu-header small text-uppercase">
                         <span class="menu-header-text">Account Settings</span>
                     </li> --}}
-                    <!--My Profile-->
-                    {{-- <li class="menu-item @if (request()->routeIs('profile_index')) active open @endif">
-                        <a href="{{ route('profile_index') }}" class="menu-link">
-                            <i class='menu-icon tf-icons bx bxs-user-detail'></i>
-                            <div data-i18n="Account">Profile</div>
-                        </a>
-                    </li> --}}
+                    
                     <!--All Users-->
                     <li class="menu-item @if (request()->routeIs('users_index')) active open @endif">
                         <a href="{{ route('users_index') }}" class="menu-link">
@@ -52,15 +46,30 @@
                         </a>
                     </li>
 
+                    <!--All Categories-->
+                    <li class="menu-item @if (request()->routeIs('categorie-index')) active open @endif">
+                        <a href="{{ route('categorie-index') }}" class="menu-link">
+                            <i class='menu-icon tf-icons bx bxs-user-detail'></i>
+                            <div data-i18n="Account">Categories</div>
+                        </a>
+                    </li>
+
                   
-                    <!--All Cars-->
-                    <li class="menu-item @if (request()->routeIs('cars-index')) active open @endif">
+                    <!--All Services-->
+                    <li class="menu-item @if (request()->routeIs('service-index')) active open @endif">
                         <a href="{{ route('service-index') }}" class="menu-link">
                             <i class='menu-icon tf-icons bx bx-briefcase-alt-2'></i>
                             <div data-i18n="Services text-info">Services</div>
                         </a>
                     </li>
-
+                    
+                    <!--All Booking-->
+                    <li class="menu-item @if (request()->routeIs('booking-index')) active open @endif">
+                        <a href="{{ route('booking-index') }}" class="menu-link">
+                            <i class='menu-icon tf-icons bx bx-briefcase-alt-2'></i>
+                            <div data-i18n="Services text-info">Booking</div>
+                        </a>
+                    </li>
                 </ul>
             </aside>
             <!-- / Menu -->
@@ -98,17 +107,9 @@
                                     data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
                                         @if ($myProfile->img_path == null)
-                                            <img src="{{ asset('users/profile/1.png') }}" alt="profile"
-                                                class="w-px-40 h-auto rounded-circle  img-fluid" />
-                                                {{-- <span
-                                                    class="notify flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">{{ $OraderCount }}</span>
-                                            </span> --}}
+                                            <img src="{{ asset('users/profile/1.png') }}" alt="profile" class="w-px-40 h-auto rounded-circle  img-fluid" />
                                         @else
-                                            <img src="{{ asset('users/profile/' . $myProfile->img_path) }}" alt="profile"
-                                                class="w-px-40 h-auto  img-fluid rounded-circle" />
-                                                {{-- <span
-                                                    class="notify flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">{{ $OraderCount }}</span>
-                                            </span> --}}
+                                            <img src="{{ asset('users/profile/' . $myProfile->img_path) }}" alt="profile" class="w-px-40 h-auto  img-fluid rounded-circle" />
                                         @endif
                                     </div>
                                 </a>

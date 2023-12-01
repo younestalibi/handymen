@@ -1,7 +1,7 @@
 @extends('layouts.container')
 
 @section('title')
-    All Services
+    All Bookings
 @endsection
 
 
@@ -12,14 +12,11 @@
         <div class="container-xxl flex-grow-1">
             <div class="row">
                 <div class="col-md-12">
-                    <!-- All Services -->
+                    <!-- All Bookings -->
                     <div class="card">
                         <h5 class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
-                                All Services
-                                <a href="{{ route('service-create') }}" class="btn btn-info">
-                                    New Service &nbsp; <span class="tf-icons fa-solid fa-angles-right"></span>
-                                </a>
+                                All Bookings
                             </div>
                         </h5>
                         <div class="table-responsive text-nowrap">
@@ -27,40 +24,57 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Service</th>
                                         <th>Name</th>
-                                        <th>Category</th>
-                                        <th>Duration</th>
-                                        <th>Description</th>
-                                        <th>picture</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Status</th>
+                                        <th>Price</th>
+                                        <th>Message</th>
                                         <th>Created</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                @if (count($services) > 0)
+                                @if (count($bookings) > 0)
                                     <tbody class="table-border-bottom-0">
                                         @php
                                             $count = 1;
                                         @endphp
-                                        @foreach ($services as $service)
+                                        @foreach ($bookings as $booking)
                                             <tr>
                                                 <td>{{ $count++ }}</td>
-                                                <td>{{ $service->name }}</td>
-                                                <td>{{ $service->category->name }}</td>
-                                                <td>{{ $service->duration }}H</td>
-                                                <td>{{ Str::limit($service->description, $limit = 50, $end = '...')  }}</td>
-                                                <td class="col-2">
-                                                    <img class="img-fluid"
-                                                        src="{{ asset('users/services/' . $service->picture) }}" />
-                                                </td>
-                                                <td>{{ $service->created_at->diffforhumans() }}</td>
-                                                {{-- <td>{{ $service->updated_at->diffforhumans() }}</td> --}}
+                                                <td>{{ $booking->service->name }}</td>
+                                                <td>{{ $booking->name }}</td>
+                                                <td>{{ $booking->email }}</td>
+                                                <td>{{ $booking->phone }}</td>
                                                 <td>
-                                                    <a href="{{ route('service-edit', ['id' => $service->id]) }}"
-                                                        id="{{ $service->id }}"
+                                                @switch($booking->status)
+                                                    @case('pending')
+                                                        <span class="badge rounded-pill p-2 bg-warning">Pending</span>
+                                                        @break
+
+                                                    @case('progress')
+                                                        <span class="badge rounded-pill p-2 bg-primary">In Progress</span>
+                                                        @break
+
+                                                    @case('done')
+                                                        <span class="badge rounded-pill p-2 bg-success">Done</span>
+                                                        @break
+
+                                                    @default
+                                                        <span class="badge rounded-pill p-2 bg-secondary">Unknown Status</span>
+                                                @endswitch
+                                                </td>
+                                                <td>{{ $booking->price?? "---" }}$</td>
+                                                <td>{{ Str::limit($booking->message, $limit = 100, $end = '...')  }}</td>
+                                                <td>{{ $booking->created_at->diffforhumans() }}</td>
+                                                <td>
+                                                    <a href="{{ route('booking-edit', ['id' => $booking->id]) }}"
+                                                        id="{{ $booking->id }}"
                                                         class="btn btnEditCar btn-sm btn-s rounded-pill btn-icon btn-outline-info">
                                                         <span class="tf-icons bx bx-edit"></span>
                                                     </a>
-                                                    <a href="" id="{{ $service->id }}"
+                                                    <a href="" id="{{ $booking->id }}"
                                                         class="btn btnDeleteCar btn-sm btn-s rounded-pill btn-icon btn-outline-danger">
                                                         <span class="tf-icons fa-solid fa-trash"></span>
                                                     </a>
@@ -72,7 +86,7 @@
                             </table>
                         </div>
                         <div class="card-footer">
-                            {{ $services->links('pagination::bootstrap-4') }}
+                            {{ $bookings->links('pagination::bootstrap-4') }}
 
                         </div>
                     </div>
@@ -89,13 +103,13 @@
 @section('scripts')
     @if (session('success'))
         <script>
-            toastr.success('{{ session('+success+') }}');
+            toastr.success("{{ session('success') }}");
         </script>
     @endif
 
     @if (session('error'))
         <script>
-            toastr.error('{{ session('+error+') }}');
+            toastr.error("{{ session('error') }}");
         </script>
     @endif
     <script>
@@ -121,7 +135,7 @@
                     if (result.isConfirmed) {
                         $.ajax({
                             type: "POST",
-                            url: `/admin/services/destroy/${id}`,  
+                            url: `/admin/bookings/destroy/${id}`,  
                             dataType: "JSON",
                             success: function(response) {
                                 Swal.fire(

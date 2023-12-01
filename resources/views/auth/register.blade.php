@@ -25,7 +25,7 @@ background: #eee;
         <div class="container py-5 h-100">
           <div class="row d-flex align-items-center justify-content-center h-100">
             <div class="col-md-8 col-lg-7 col-xl-6">
-                <img src="https://www.pngitem.com/pimgs/m/138-1387176_muscle-cars-png-car-vector-background-png-transparent.png"
+                <img src="{{asset('assets/handyman.png')}}"
                 class="img-fluid" alt="car image">
             </div>
             <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
