@@ -39,7 +39,7 @@
                           <div class="themeholy-hero-slide">
                             <div
                               class="themeholy-hero-bg"
-                              data-bg-src="https://handymentocall.com/wp-content/uploads/2023/11/electricity-protection-side-view-of-young-handyma-2021-12-09-07-12-25-utc-1.jpg"
+                              data-bg-src="{{asset('home-assets/img/electricity.jpg')}}"
                             >
                               <img
                                 decoding="async"
@@ -89,7 +89,7 @@
                                   data-ani-delay="0.9s"
                                 >
                                   <a
-                                    href="https://handymentocall.com/contact/"
+                                    href="route('home-contact')"
                                     class="themeholy-btn style3"
                                     >Schedule Now
                                     <i class="fa-regular fa-arrow-right ms-2">
@@ -102,7 +102,7 @@
                           <div class="themeholy-hero-slide">
                             <div
                               class="themeholy-hero-bg"
-                              data-bg-src="https://handymentocall.com/wp-content/uploads/2023/11/professional-plumber-repairing-water-supply-system-2023-09-06-01-02-07-utc.jpg"
+                              data-bg-src="{{asset('home-assets/img/plumber.jpg')}}"
                             >
                               <img
                                 decoding="async"
@@ -151,7 +151,7 @@
                                   data-ani-delay="0.9s"
                                 >
                                   <a
-                                    href="https://handymentocall.com/contact/"
+                                    href="route('home-contact')"
                                     class="themeholy-btn style3"
                                     >Schedule Now
                                     <i class="fa-regular fa-arrow-right ms-2">
@@ -164,7 +164,7 @@
                           <div class="themeholy-hero-slide">
                             <div
                               class="themeholy-hero-bg"
-                              data-bg-src="https://handymentocall.com/wp-content/uploads/2023/11/carpenter-at-work-2021-08-29-16-27-44-utc.jpg"
+                              data-bg-src="{{asset('home-assets/img/carpenter.jpg')}}"
                             >
                               <img
                                 decoding="async"
@@ -214,7 +214,7 @@
                                   data-ani-delay="0.9s"
                                 >
                                   <a
-                                    href="https://handymentocall.com/contact/"
+                                    href="{{ route('home-contact') }}"
                                     class="themeholy-btn style3"
                                     >Schedule Now
                                     <i class="fa-regular fa-arrow-right ms-2">
@@ -373,7 +373,7 @@
                               <div class="btn-wrapper left">
                                 <a
                                   class="themeholy-btn"
-                                  href="https://handymentocall.com/about-us/"
+                                  href="{{ route('home-about') }}"
                                   >About More
                                 </a>
                               </div>
@@ -545,284 +545,6 @@
                                       object-fit: cover !important;
                                   }
                                 </style>
-                                  <!-- <div class="col-md-6 col-xl-4">
-                                    <div class="service-card">
-                                      <div class="service-card_icon">
-                                        <img
-                                          decoding="async"
-                                          src="{{ asset('home-assets/images/2023-11-22.png')}}"
-                                          alt="22"
-                                        />
-                                      </div>
-                                      <div class="service-card_content">
-                                        <div class="shape1"></div>
-                                        <h3 class="box-title">
-                                          <a
-                                            href="https://handymentocall.com/hvac-experts/"
-                                            >HVAC Experts
-                                          </a>
-                                        </h3>
-                                        <p class="service-card_text">
-                                          At Handymen to Call, we take pride in
-                                          being your trusted HVAC experts,
-                                          providing top-notch services to ensure
-                                          your home or business stays
-                                          comfortable year-round.
-                                        </p>
-                                        <a
-                                          href="https://handymentocall.com/hvac-experts/"
-                                          class="themeholy-btn"
-                                          >Read More
-                                        </a>
-                                        <div class="ripple-shape">
-                                          <span class="ripple-1"> </span>
-                                          <span class="ripple-2"> </span>
-                                          <span class="ripple-3"> </span>
-                                          <span class="ripple-4"> </span>
-                                          <span class="ripple-5"> </span>
-                                          <span class="ripple-6"> </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-6 col-xl-4">
-                                    <div class="service-card">
-                                      <div class="service-card_icon">
-                                        <img
-                                          decoding="async"
-                                          src="{{ asset('home-assets/images/2023-08-service_list_6.svg')}}"
-                                          alt="service_list_6"
-                                        />
-                                      </div>
-                                      <div class="service-card_content">
-                                        <div class="shape1"></div>
-                                        <h3 class="box-title">
-                                          <a
-                                            href="https://handymentocall.com/plumbing-experts/"
-                                            >Plumbing Experts
-                                          </a>
-                                        </h3>
-                                        <p class="service-card_text">
-                                          At Handymen to call, we know that a
-                                          plumbing issue can disrupt your daily
-                                          life and be a source of stress.
-                                          We&#039;re here to provide
-                                          professional plumbing services to
-                                          homeowners and businesses
-                                        </p>
-                                        <a
-                                          href="https://handymentocall.com/plumbing-experts/"
-                                          class="themeholy-btn"
-                                          >Read More
-                                        </a>
-                                        <div class="ripple-shape">
-                                          <span class="ripple-1"> </span>
-                                          <span class="ripple-2"> </span>
-                                          <span class="ripple-3"> </span>
-                                          <span class="ripple-4"> </span>
-                                          <span class="ripple-5"> </span>
-                                          <span class="ripple-6"> </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-6 col-xl-4">
-                                    <div class="service-card">
-                                      <div class="service-card_icon">
-                                        <img
-                                          decoding="async"
-                                          src="{{ asset('home-assets/images/2023-08-service_list_6.svg')}}"
-                                          alt="service_list_6"
-                                        />
-                                      </div>
-                                      <div class="service-card_content">
-                                        <div class="shape1"></div>
-                                        <h3 class="box-title">
-                                          <a
-                                            href="https://handymentocall.com/plumbing-experts/"
-                                            >Hello world
-                                          </a>
-                                        </h3>
-                                        <p class="service-card_text">
-                                          some kind of description
-                                        </p>
-                                        <a
-                                          href="https://handymentocall.com/plumbing-experts/"
-                                          class="themeholy-btn"
-                                          >Read More
-                                        </a>
-                                        <div class="ripple-shape">
-                                          <span class="ripple-1"> </span>
-                                          <span class="ripple-2"> </span>
-                                          <span class="ripple-3"> </span>
-                                          <span class="ripple-4"> </span>
-                                          <span class="ripple-5"> </span>
-                                          <span class="ripple-6"> </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-6 col-xl-4">
-                                    <div class="service-card">
-                                      <div class="service-card_icon">
-                                        <img
-                                          decoding="async"
-                                          src="{{ asset('home-assets/images/2023-08-service_list_7.svg')}}"
-                                          alt="service_list_7"
-                                        />
-                                      </div>
-                                      <div class="service-card_content">
-                                        <div class="shape1"></div>
-                                        <h3 class="box-title">
-                                          <a
-                                            href="https://handymentocall.com/painting-services/"
-                                            >Painting Services
-                                          </a>
-                                        </h3>
-                                        <p class="service-card_text">
-                                          At Handyman to call, we believe that a
-                                          fresh coat of paint can transform your
-                                          living or working space, enhance its
-                                          aesthetics, and breathe new life into
-                                          your surroundings.
-                                        </p>
-                                        <a
-                                          href="https://handymentocall.com/painting-services/"
-                                          class="themeholy-btn"
-                                          >Read More
-                                        </a>
-                                        <div class="ripple-shape">
-                                          <span class="ripple-1"> </span>
-                                          <span class="ripple-2"> </span>
-                                          <span class="ripple-3"> </span>
-                                          <span class="ripple-4"> </span>
-                                          <span class="ripple-5"> </span>
-                                          <span class="ripple-6"> </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-6 col-xl-4">
-                                    <div class="service-card">
-                                      <div class="service-card_icon">
-                                        <img
-                                          decoding="async"
-                                          src="{{ asset('home-assets/images/2023-08-hero_5_icon.svg')}}"
-                                          alt="hero_5_icon"
-                                        />
-                                      </div>
-                                      <div class="service-card_content">
-                                        <div class="shape1"></div>
-                                        <h3 class="box-title">
-                                          <a
-                                            href="https://handymentocall.com/carpenter-services/"
-                                            >Carpenter Services
-                                          </a>
-                                        </h3>
-                                        <p class="service-card_text">
-                                          At Handymen to Call, we take pride in
-                                          offering a comprehensive range of
-                                          professional carpentry services
-                                          designed to enhance the beauty and
-                                          functionality of your space.
-                                        </p>
-                                        <a
-                                          href="https://handymentocall.com/carpenter-services/"
-                                          class="themeholy-btn"
-                                          >Read More
-                                        </a>
-                                        <div class="ripple-shape">
-                                          <span class="ripple-1"> </span>
-                                          <span class="ripple-2"> </span>
-                                          <span class="ripple-3"> </span>
-                                          <span class="ripple-4"> </span>
-                                          <span class="ripple-5"> </span>
-                                          <span class="ripple-6"> </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-6 col-xl-4">
-                                    <div class="service-card">
-                                      <div class="service-card_icon">
-                                        <img
-                                          decoding="async"
-                                          src="{{ asset('home-assets/images/2023-04-feature_grid_1.svg')}}"
-                                          alt="feature_grid_1"
-                                        />
-                                      </div>
-                                      <div class="service-card_content">
-                                        <div class="shape1"></div>
-                                        <h3 class="box-title">
-                                          <a
-                                            href="https://handymentocall.com/electrical-services/"
-                                            >Electrical Services
-                                          </a>
-                                        </h3>
-                                        <p class="service-card_text">
-                                          At Handymen to call, we take pride in
-                                          providing top-notch electrical
-                                          services to meet all your residential
-                                          and commercial needs. With our team of
-                                          highly skilled and experienced.
-                                        </p>
-                                        <a
-                                          href="https://handymentocall.com/electrical-services/"
-                                          class="themeholy-btn"
-                                          >Read More
-                                        </a>
-                                        <div class="ripple-shape">
-                                          <span class="ripple-1"> </span>
-                                          <span class="ripple-2"> </span>
-                                          <span class="ripple-3"> </span>
-                                          <span class="ripple-4"> </span>
-                                          <span class="ripple-5"> </span>
-                                          <span class="ripple-6"> </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-6 col-xl-4">
-                                    <div class="service-card">
-                                      <div class="service-card_icon">
-                                        <img
-                                          decoding="async"
-                                          src="{{ asset('home-assets/images/2023-08-service_list_4.svg')}}"
-                                          alt="service_list_4"
-                                        />
-                                      </div>
-                                      <div class="service-card_content">
-                                        <div class="shape1"></div>
-                                        <h3 class="box-title">
-                                          <a
-                                            href="https://handymentocall.com/installation-services/"
-                                            >Appliance Installation
-                                          </a>
-                                        </h3>
-                                        <p class="service-card_text">
-                                          At Handyman to call, we understand
-                                          that the proper installation of your
-                                          appliances is crucial for their
-                                          optimal performance and your safety.
-                                          We are your trusted partners for
-                                          professional
-                                        </p>
-                                        <a
-                                          href="https://handymentocall.com/installation-services/"
-                                          class="themeholy-btn"
-                                          >Read More
-                                        </a>
-                                        <div class="ripple-shape">
-                                          <span class="ripple-1"> </span>
-                                          <span class="ripple-2"> </span>
-                                          <span class="ripple-3"> </span>
-                                          <span class="ripple-4"> </span>
-                                          <span class="ripple-5"> </span>
-                                          <span class="ripple-6"> </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div> -->
                                 </div>
                               </div>
                             </div>
@@ -1391,7 +1113,7 @@
                               <div class="btn-wrapper left">
                                 <a
                                   class="themeholy-btn"
-                                  href="https://handymentocall.com/contact/"
+                                  href="{{ route('home-contact') }}"
                                   >Ask Questions
                                 </a>
                               </div>
@@ -1895,12 +1617,12 @@
                               <div class="w-100 btn-group-wrap">
                                 <div class="btn-group">
                                   <a
-                                    href="https://handymentocall.com/contact/"
+                                    href="{{ route('home-contact') }}"
                                     class="themeholy-btn themeholy-btn style3"
                                     >Schedule Now
                                   </a>
                                   <a
-                                    href="https://handymentocall.com/contact/"
+                                    href="{{ route('home-contact') }}"
                                     class="themeholy-btn themeholy-btn style2"
                                     >Contact Us
                                   </a>

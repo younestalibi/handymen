@@ -10,7 +10,7 @@
         <title>Services &#8211; Handymen To Call</title>
         <meta name="robots" content="max-image-preview:large" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link
+        <!-- <link
             rel="alternate"
             type="application/rss+xml"
             title="Handymen To Call &raquo; Feed"
@@ -21,8 +21,8 @@
             type="application/rss+xml"
             title="Handymen To Call &raquo; Comments Feed"
             href="https://handymentocall.com/comments/feed/"
-        />
-        <script>
+        /> -->
+        <!-- <script>
             window._wpemojiSettings = {
                 baseUrl:
                     "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/",
@@ -208,7 +208,7 @@
                                       (t(e.twemoji), t(e.wpemoji)));
                         }));
             })((window, document), window._wpemojiSettings);
-        </script>
+        </script> -->
         <style id="wp-emoji-styles-inline-css">
             img.wp-smiley,
             img.emoji {
@@ -648,13 +648,13 @@
         <link
             rel="stylesheet"
             id="redux-extendify-styles-css"
-            href="http://127.0.0.1:8000/services-assets/css/redux-framework-redux-core-assets-css-extendify-utilities.css"
+            href="{{asset('services-assets/css/redux-framework-redux-core-assets-css-extendify-utilities.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="contact-form-7-css"
-            href="http://127.0.0.1:8000/services-assets/css/contact-form-7-includes-css-styles.css"
+            href="{{asset('services-assets/css/contact-form-7-includes-css-styles.css')}}"
             media="all"
         />
         <style id="woocommerce-inline-inline-css">
@@ -665,79 +665,79 @@
         <link
             rel="stylesheet"
             id="slick-css"
-            href="http://127.0.0.1:8000/services-assets/css/woo-smart-quick-view-assets-libs-slick-slick.css"
+            href="{{asset('services-assets/css/woo-smart-quick-view-assets-libs-slick-slick.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="perfect-scrollbar-css"
-            href="http://127.0.0.1:8000/services-assets/css/woo-smart-quick-view-assets-libs-perfect-scrollbar-css-perfect-scrollbar.min.css"
+            href="{{asset('services-assets/css/woo-smart-quick-view-assets-libs-perfect-scrollbar-css-perfect-scrollbar.min.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="perfect-scrollbar-wpc-css"
-            href="http://127.0.0.1:8000/services-assets/css/woo-smart-quick-view-assets-libs-perfect-scrollbar-css-custom-theme.css"
+            href="{{asset('services-assets/css/woo-smart-quick-view-assets-libs-perfect-scrollbar-css-custom-theme.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="magnific-popup-css"
-            href="http://127.0.0.1:8000/services-assets/css/woo-smart-quick-view-assets-libs-magnific-popup-magnific-popup.css"
+            href="{{asset('services-assets/css/woo-smart-quick-view-assets-libs-magnific-popup-magnific-popup.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="woosq-feather-css"
-            href="http://127.0.0.1:8000/services-assets/css/woo-smart-quick-view-assets-libs-feather-feather.css"
+            href="{{asset('services-assets/css/woo-smart-quick-view-assets-libs-feather-feather.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="woosq-frontend-css"
-            href="http://127.0.0.1:8000/services-assets/css/woo-smart-quick-view-assets-css-frontend.css"
+            href="{{asset('services-assets/css/woo-smart-quick-view-assets-css-frontend.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="elementor-icons-css"
-            href="http://127.0.0.1:8000/services-assets/css/elementor-assets-lib-eicons-css-elementor-icons.min.css"
+            href="{{asset('services-assets/css/elementor-assets-lib-eicons-css-elementor-icons.min.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="elementor-frontend-css"
-            href="http://127.0.0.1:8000/services-assets/css/elementor-assets-css-frontend-lite.min.css"
+            href="{{asset('services-assets/css/elementor-assets-css-frontend-lite.min.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="swiper-css"
-            href="http://127.0.0.1:8000/services-assets/css/elementor-assets-lib-swiper-v8-css-swiper.min.css"
+            href="{{asset('services-assets/css/elementor-assets-lib-swiper-v8-css-swiper.min.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="elementor-post-7-css"
-            href="http://127.0.0.1:8000/services-assets/css/elementor-css-post-7.css"
+            href="{{asset('services-assets/css/elementor-css-post-7.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="elementor-global-css"
-            href="http://127.0.0.1:8000/services-assets/css/elementor-css-global.css"
+            href="{{asset('services-assets/css/elementor-css-global.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="elementor-post-22-css"
-            href="http://127.0.0.1:8000/services-assets/css/elementor-css-post-22.css"
+            href="{{asset('services-assets/css/elementor-css-post-22.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="plumer-style-css"
-            href="http://127.0.0.1:8000/services-assets/css/plumer-style.css"
+            href="{{asset('services-assets/css/plumer-style.css')}}"
             media="all"
         />
         <link
@@ -749,25 +749,25 @@
         <link
             rel="stylesheet"
             id="bootstrap-css"
-            href="http://127.0.0.1:8000/services-assets/css/plumer-assets-css-bootstrap.min.css"
+            href="{{asset('services-assets/css/plumer-assets-css-bootstrap.min.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="fontawesome-css"
-            href="http://127.0.0.1:8000/services-assets/css/plumer-assets-css-fontawesome.min.css"
+            href="{{asset('services-assets/css/plumer-assets-css-fontawesome.min.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="plumer-main-style-css"
-            href="http://127.0.0.1:8000/services-assets/css/plumer-assets-css-style.css"
+            href="{{asset('services-assets/css/plumer-assets-css-style.css')}}"
             media="all"
         />
         <link
             rel="stylesheet"
             id="plumer-color-schemes-css"
-            href="http://127.0.0.1:8000/services-assets/css/plumer-assets-css-color.schemes.css"
+            href="{{asset('services-assets/css/plumer-assets-css-color.schemes.css')}}"
             media="all"
         />
         <link
@@ -785,7 +785,7 @@
         <script type="text/template" id="tmpl-unavailable-variation-template">
             <p>Sorry, this product is unavailable. Please choose a different combination.</p>
         </script>
-        <script>
+        <!-- <script>
             /* <![CDATA[ */
             var rcewpp = {
                 ajax_url: "https://handymentocall.com/wp-admin/admin-ajax.php",
@@ -797,18 +797,18 @@
                     "https://handymentocall.com/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png",
             };
             /* ]]\> */
-        </script>
-        <script src="http://127.0.0.1:8000/services-assets/js/jquery-jquery.min.js" id="jquery-core-js"></script>
+        </script> -->
+        <script src="{{asset('services-assets/js/jquery-jquery.min.js')}}" id="jquery-core-js"></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/jquery-jquery-migrate.min.js"
+            src="{{asset('services-assets/js/jquery-jquery-migrate.min.js')}}"
             id="jquery-migrate-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/woocommerce-assets-js-jquery-blockui-jquery.blockUI.min.js"
+            src="{{asset('services-assets/js/woocommerce-assets-js-jquery-blockui-jquery.blockUI.min.js')}}"
             id="jquery-blockui-js"
             data-wp-strategy="defer"
         ></script>
-        <script id="wc-add-to-cart-js-extra">
+        <!-- <script id="wc-add-to-cart-js-extra">
             var wc_add_to_cart_params = {
                 ajax_url: "\/wp-admin\/admin-ajax.php",
                 wc_ajax_url: "\/?wc-ajax=%%endpoint%%",
@@ -817,15 +817,15 @@
                 is_cart: "",
                 cart_redirect_after_add: "no",
             };
-        </script>
+        </script> -->
         <script
-            src="http://127.0.0.1:8000/services-assets/js/woocommerce-assets-js-frontend-add-to-cart.min.js"
+            src="{{asset('services-assets/js/woocommerce-assets-js-frontend-add-to-cart.min.js')}}"
             id="wc-add-to-cart-js"
             defer
             data-wp-strategy="defer"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/woocommerce-assets-js-js-cookie-js.cookie.min.js"
+            src="{{asset('services-assets/js/woocommerce-assets-js-js-cookie-js.cookie.min.js')}}"
             id="js-cookie-js"
             defer
             data-wp-strategy="defer"
@@ -837,19 +837,19 @@
             };
         </script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/woocommerce-assets-js-frontend-woocommerce.min.js"
+            src="{{asset('services-assets/js/woocommerce-assets-js-frontend-woocommerce.min.js')}}"
             id="woocommerce-js"
             defer
             data-wp-strategy="defer"
         ></script>
-        <script src="http://127.0.0.1:8000/services-assets/js/uek-underscore.min.js" id="underscore-js"></script>
+        <script src="{{asset('services-assets/js/uek-underscore.min.js')}}" id="underscore-js"></script>
         <script id="wp-util-js-extra">
             var _wpUtilSettings = {
                 ajax: { url: "\/wp-admin\/admin-ajax.php" },
             };
         </script>
-        <script src="http://127.0.0.1:8000/services-assets/js/08k-wp-util.min.js" id="wp-util-js"></script>
-        <link
+        <script src="{{asset('services-assets/js/08k-wp-util.min.js')}}" id="wp-util-js"></script>
+        <!-- <link
             rel="https://api.w.org/"
             href="https://handymentocall.com/wp-json/"
         />
@@ -863,10 +863,10 @@
             type="application/rsd+xml"
             title="RSD"
             href="https://handymentocall.com/xmlrpc.php?rsd"
-        />
+        /> -->
         <meta name="generator" content="WordPress 6.4.1" />
         <meta name="generator" content="WooCommerce 8.3.1" />
-        <link rel="canonical" href="https://handymentocall.com/services/" />
+        <!-- <link rel="canonical" href="https://handymentocall.com/services/" />
         <link rel="shortlink" href="https://handymentocall.com/?p=22" />
         <link
             rel="alternate"
@@ -877,7 +877,7 @@
             rel="alternate"
             type="text/xml+oembed"
             href="https://handymentocall.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhandymentocall.com%2Fservices%2F&#038;format=xml"
-        />
+        /> -->
         <meta name="generator" content="Redux 4.4.9" />
         <noscript
             ><style>
@@ -892,22 +892,22 @@
         />
         <link
             rel="icon"
-            href="http://127.0.0.1:8000/services-assets/images/cropped-Untitled-2-1-32x32.png"
+            href="{{asset('services-assets/images/cropped-Untitled-2-1-32x32.png')}}"
             sizes="32x32"
         />
         <link
             rel="icon"
-            href="http://127.0.0.1:8000/services-assets/images/cropped-Untitled-2-1-192x192.png"
+            href="{{asset('services-assets/images/cropped-Untitled-2-1-192x192.png')}}"
             sizes="192x192"
         />
         <link
             rel="apple-touch-icon"
-            href="http://127.0.0.1:8000/services-assets/images/cropped-Untitled-2-1-180x180.png"
+            href="{{asset('services-assets/images/cropped-Untitled-2-1-180x180.png')}}"
         />
-        <meta
+        <!-- <meta
             name="msapplication-TileImage"
             content="https://handymentocall.com/wp-content/uploads/2023/05/cropped-Untitled-2-1-270x270.png"
-        />
+        /> -->
         <style id="wp-custom-css">
             .main-menu ul{ 	align-content: center; }
         </style>
@@ -919,7 +919,7 @@
             .breadcumb-wrapper {
                 background-repeat: no-repeat;
                 background-position: center center;
-                background-image: url("http://127.0.0.1:8000/services-assets/images/breadcumb-bg.jpg");
+                background-image: url("{{asset('services-assets/images/breadcumb-bg.jpg')}}");
                 background-size: cover;
             }
             .footer-copyright {
@@ -960,7 +960,7 @@
                                                         <div class="shape1" ></div>
                                                         <div class="service-block_icon" >
                                                             <div class="icon">
-                                                                <img decoding="async" src="http://127.0.0.1:8000/services-assets/images/2023-04-service_grid_1.svg" alt="service_grid_1" />
+                                                                <img decoding="async" src="{{asset('services-assets/images/2023-04-service_grid_1.svg')}}" alt="service_grid_1" />
                                                             </div>
                                                         </div>
                                                         <div class="service-block_img" >
@@ -1016,7 +1016,7 @@
             </svg>
         </div>
         <!-- End of Back to Top Button -->
-        <script type="application/ld+json">
+        <!-- <script type="application/ld+json">
             {
                 "@context": "https:\/\/schema.org\/",
                 "@type": "BreadcrumbList",
@@ -1036,7 +1036,7 @@
                     }
                 ]
             }
-        </script>
+        </script> -->
         <script type="text/javascript">
             (function () {
                 var c = document.body.className;
@@ -1044,55 +1044,40 @@
                 document.body.className = c;
             })();
         </script>
-        <link
-            rel="stylesheet"
-            id="elementor-post-1531-css"
-            href="http://127.0.0.1:8000/services-assets/css/elementor-css-post-1531.css"
-            media="all"
-        />
-        <link
-            rel="stylesheet"
-            id="elementor-post-2193-css"
-            href="http://127.0.0.1:8000/services-assets/css/elementor-css-post-2193.css"
-            media="all"
-        />
-        <link
-            rel="stylesheet"
-            id="elementor-icons-shared-0-css"
-            href="http://127.0.0.1:8000/services-assets/css/elementor-assets-lib-font-awesome-css-fontawesome.min.css"
-            media="all"
-        />
+        <link rel="stylesheet" id="elementor-post-1531-css" href="{{asset('services-assets/css/elementor-css-post-1531.css')}}" media="all" />
+        <link rel="stylesheet" id="elementor-post-2193-css" href="{{asset('services-assets/css/elementor-css-post-2193.css')}}" media="all" />
+        <link rel="stylesheet" id="elementor-icons-shared-0-css" href="{{asset('services-assets/css/elementor-assets-lib-font-awesome-css-fontawesome.min.css')}}" media="all" />
         <link
             rel="stylesheet"
             id="elementor-icons-fa-brands-css"
-            href="http://127.0.0.1:8000/services-assets/css/elementor-assets-lib-font-awesome-css-brands.min.css"
+            href="{{asset('services-assets/css/elementor-assets-lib-font-awesome-css-brands.min.css')}}"
             media="all"
         />
         <script
-            src="http://127.0.0.1:8000/services-assets/js/contact-form-7-includes-swv-js-index.js"
+            src="{{asset('services-assets/js/contact-form-7-includes-swv-js-index.js')}}"
             id="swv-js"
         ></script>
-        <script id="contact-form-7-js-extra">
+        <!-- <script id="contact-form-7-js-extra">
             var wpcf7 = {
                 api: {
                     root: "https:\/\/handymentocall.com\/wp-json\/",
                     namespace: "contact-form-7\/v1",
                 },
             };
-        </script>
+        </script> -->
         <script
-            src="http://127.0.0.1:8000/services-assets/js/contact-form-7-includes-js-index.js"
+            src="{{asset('services-assets/js/contact-form-7-includes-js-index.js')}}"
             id="contact-form-7-js"
         ></script>
-        <script id="plumer-ajax-js-extra">
+        <!-- <script id="plumer-ajax-js-extra">
             var plumerajax = {
                 action_url:
                     "https:\/\/handymentocall.com\/wp-admin\/admin-ajax.php",
                 nonce: "d65a769416",
             };
-        </script>
+        </script> -->
         <script
-            src="http://127.0.0.1:8000/services-assets/js/plumer-core-assets-js-plumer.ajax.js"
+            src="{{asset('services-assets/js/plumer-core-assets-js-plumer.ajax.js')}}"
             id="plumer-ajax-js"
         ></script>
         <script id="wc-add-to-cart-variation-js-extra">
@@ -1107,23 +1092,23 @@
             };
         </script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/woocommerce-assets-js-frontend-add-to-cart-variation.min.js"
+            src="{{asset('services-assets/js/woocommerce-assets-js-frontend-add-to-cart-variation.min.js')}}"
             id="wc-add-to-cart-variation-js"
             data-wp-strategy="defer"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/woo-smart-quick-view-assets-libs-slick-slick.min.js"
+            src="{{asset('services-assets/js/woo-smart-quick-view-assets-libs-slick-slick.min.js')}}"
             id="slick-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/woo-smart-quick-view-assets-libs-perfect-scrollbar-js-perfect-scrollbar.jquery.min.js"
+            src="{{asset('services-assets/js/woo-smart-quick-view-assets-libs-perfect-scrollbar-js-perfect-scrollbar.jquery.min.js')}}"
             id="perfect-scrollbar-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/woo-smart-quick-view-assets-libs-magnific-popup-jquery.magnific-popup.min.js"
+            src="{{asset('services-assets/js/woo-smart-quick-view-assets-libs-magnific-popup-jquery.magnific-popup.min.js')}}"
             id="magnific-popup-js"
         ></script>
-        <script id="woosq-frontend-js-extra">
+        <!-- <script id="woosq-frontend-js-extra">
             var woosq_vars = {
                 ajax_url:
                     "https:\/\/handymentocall.com\/wp-admin\/admin-ajax.php",
@@ -1146,60 +1131,60 @@
                 thumbnails_zoom_params: '{"duration":120,"magnify":1}',
                 quick_view: "0",
             };
-        </script>
+        </script> -->
         <script
-            src="http://127.0.0.1:8000/services-assets/js/woo-smart-quick-view-assets-js-frontend.js"
+            src="{{asset('services-assets/js/woo-smart-quick-view-assets-js-frontend.js')}}"
             id="woosq-frontend-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/plumer-assets-js-bootstrap.min.js"
+            src="{{asset('services-assets/js/plumer-assets-js-bootstrap.min.js')}}"
             id="bootstrap-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/plumer-assets-js-circle-progress.js"
+            src="{{asset('services-assets/js/plumer-assets-js-circle-progress.js')}}"
             id="circle-progress-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/plumer-assets-js-isotope.pkgd.min.js"
+            src="{{asset('services-assets/js/plumer-assets-js-isotope.pkgd.min.js')}}"
             id="isotope-pkgd-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/plumer-assets-js-jquery-ui.min.js"
+            src="{{asset('services-assets/js/plumer-assets-js-jquery-ui.min.js')}}"
             id="ui-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/plumer-assets-js-jquery.counterup.min.js"
+            src="{{asset('services-assets/js/plumer-assets-js-jquery.counterup.min.js')}}"
             id="counterup-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/plumer-assets-js-tilt.jquery.min.js"
+            src="{{asset('services-assets/js/plumer-assets-js-tilt.jquery.min.js')}}"
             id="tilt-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/s4h-imagesloaded.min.js"
+            src="{{asset('services-assets/js/s4h-imagesloaded.min.js')}}"
             id="imagesloaded-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/plumer-assets-js-main.js"
+            src="{{asset('services-assets/js/plumer-assets-js-main.js')}}"
             id="plumer-main-script-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/elementor-assets-js-webpack.runtime.min.js"
+            src="{{asset('services-assets/js/elementor-assets-js-webpack.runtime.min.js')}}"
             id="elementor-webpack-runtime-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/elementor-assets-js-frontend-modules.min.js"
+            src="{{asset('services-assets/js/elementor-assets-js-frontend-modules.min.js')}}"
             id="elementor-frontend-modules-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/elementor-assets-lib-waypoints-waypoints.min.js"
+            src="{{asset('services-assets/js/elementor-assets-lib-waypoints-waypoints.min.js')}}"
             id="elementor-waypoints-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/jquery-ui-core.min.js"
+            src="{{asset('services-assets/js/jquery-ui-core.min.js')}}"
             id="jquery-ui-core-js"
         ></script>
-        <script id="elementor-frontend-js-before">
+        <!-- <script id="elementor-frontend-js-before">
             var elementorFrontendConfig = {
                 environmentMode: {
                     edit: false,
@@ -1318,17 +1303,17 @@
                     featuredImage: false,
                 },
             };
-        </script>
+        </script> -->
         <script
-            src="http://127.0.0.1:8000/services-assets/js/elementor-assets-js-frontend.min.js"
+            src="{{asset('services-assets/js/elementor-assets-js-frontend.min.js')}}"
             id="elementor-frontend-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/plumer-core-assets-js-plumer-core.js"
+            src="{{asset('services-assets/js/plumer-core-assets-js-plumer-core.js')}}"
             id="plumer-core-js"
         ></script>
         <script
-            src="http://127.0.0.1:8000/services-assets/js/plumer-core-assets-js-plumer-frontend.js"
+            src="{{asset('services-assets/js/plumer-core-assets-js-plumer-frontend.js')}}"
             id="plumer-frontend-script-js"
         ></script>
     </body>
