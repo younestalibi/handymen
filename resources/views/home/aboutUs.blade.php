@@ -2325,7 +2325,7 @@
             src="{{ asset('about-assets/js/jquery-ui-core.min.js')}}"
             id="jquery-ui-core-js"
         ></script>
-        <!-- <script id="elementor-frontend-js-before">
+        <script id="elementor-frontend-js-before">
             var elementorFrontendConfig = {
                 environmentMode: {
                     edit: false,
@@ -2444,7 +2444,7 @@
                     featuredImage: false,
                 },
             };
-        </script> -->
+        </script>
         <script
             src="{{ asset('about-assets/js/elementor-assets-js-frontend.min.js')}}"
             id="elementor-frontend-js"

@@ -1186,7 +1186,7 @@
     <script src="{{asset('service-assets/js/elementor-assets-js-frontend-modules.min.js')}}" id="elementor-frontend-modules-js"></script>
     <script src="{{asset('service-assets/js/elementor-assets-lib-waypoints-waypoints.min.js')}}" id="elementor-waypoints-js"></script>
     <script src="{{asset('service-assets/js/jquery-ui-core.min.js')}}" id="jquery-ui-core-js"></script>
-    <!-- <script id="elementor-frontend-js-before">
+    <script id="elementor-frontend-js-before">
         var elementorFrontendConfig = {
             environmentMode: {
                 edit: false,
@@ -1307,7 +1307,7 @@
                 featuredImage: false,
             },
         };
-    </script> -->
+    </script>
     <script src="{{asset('service-assets/js/elementor-assets-js-frontend.min.js')}}" id="elementor-frontend-js"></script>
     <script src="{{asset('service-assets/js/plumer-core-assets-js-plumer-core.js')}}" id="plumer-core-js"></script>
     <script src="{{asset('service-assets/js/plumer-core-assets-js-plumer-frontend.js')}}" id="plumer-frontend-script-js"></script>
