@@ -195,7 +195,7 @@
                             <div class="mb-2 mb-md-0">
                                 Copyright &copy;
                                 <script>
-                                    document.write(new Date().getFullYear());
+                                    2023
                                 </script>
                             </div>
                         </div>

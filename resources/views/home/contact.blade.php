@@ -930,7 +930,7 @@
     <body
         class="page-template page-template-template-builder page-template-template-builder-php page page-id-42 wp-custom-logo wp-embed-responsive theme-plumer woocommerce-no-js elementor-default elementor-kit-7 elementor-page elementor-page-42"
     >
-    <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
 <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
     @if (session('success'))
         <script>

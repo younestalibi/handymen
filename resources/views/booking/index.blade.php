@@ -43,7 +43,7 @@
                                         @foreach ($bookings as $booking)
                                             <tr>
                                                 <td>{{ $count++ }}</td>
-                                                <td>{{ $booking->service->name }}</td>
+                                                <td>{!! $booking->service->name ?? '<span class=" badge rounded-pill bg-danger">urgent*</span>' !!}</td>
                                                 <td>{{ $booking->name }}</td>
                                                 <td>{{ $booking->email }}</td>
                                                 <td>{{ $booking->phone }}</td>

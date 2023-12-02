@@ -86,6 +86,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::get('edit/{id}', [BookingController::class, 'edit'])->name('booking-edit');
         Route::post('destroy/{id}', [BookingController::class, 'destroy'])->name('booking-destroy');
         Route::post('store', [BookingController::class, 'store'])->name('booking-store')->withoutMiddleware(['auth']);
+        Route::post('urgent', [BookingController::class, 'urgent'])->name('booking-urgent')->withoutMiddleware(['auth']);
         Route::post('update', [BookingController::class, 'update'])->name('booking-update');
     });
 

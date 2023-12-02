@@ -20,16 +20,14 @@ class ProfileController extends Controller
     {
         $this->middleware('auth');
     }
-
+ 
     public function index()
     {
         $myProfile = User::find(Auth::user()->id)->Profile;
         if (Auth::user()->role == 'Administrator') {
-            $OraderCount = Order::where('status', '=', 'incomplete')->count();
-            return view('account', compact('myProfile', 'OraderCount'));
+            return view('account', compact('myProfile'));
         } else {
-            $OraderCount = Order::where('user_id', '=', Auth::user()->id)->where('status', '=', 'incomplete')->count();
-            return view('accountCustomer', compact('myProfile', 'OraderCount'));
+            return view('home.index');
         }
     }
 

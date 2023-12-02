@@ -53,7 +53,7 @@
         <div class="col-12">
             <h1 class="display-1 font-monospace text-primary">Bookings</h1>
         </div>
-        <div class="col-lg-4 col-md-12 col-4 mb-4">
+        <div class="col-lg-4 col-md-12 mb-4">
             <div class="card shadow-lg rounded">
                 <div class="card-body">
                     <div class="card-header fs-3 font-monospace text-primary px-0">
@@ -73,11 +73,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-12 col-4 mb-4">
+        <div class="col-lg-4 col-md-12 mb-4">
             <div class="card shadow-lg rounded">
                 <div class="card-body">
                     <div class="card-header fs-3 font-monospace text-danger px-0">
-                        Bookings Incompleted
+                        Bookings Incomplet
                     </div>
                     <div class="card-title d-flex align-items-center justify-content-between">
                         <div class="fs-1">
@@ -93,11 +93,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-12 col-4 mb-4">
+        <div class="col-lg-4 col-md-12 mb-4">
             <div class="card shadow-lg rounded">
                 <div class="card-body">
                     <div class="card-header font-monospace fs-3 text-success px-0">
-                        Bookings Completed
+                        Bookings Complet
                     </div>
                     <div class="card-title d-flex align-items-center justify-content-between">
                         <div class="fs-1">

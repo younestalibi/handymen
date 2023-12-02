@@ -20,14 +20,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->role == 'Administrator') {
-            $OraderCount = Order::where('status', '=', 'incomplete')->count();
-        } else {
-            $OraderCount = Order::where('user_id', '=', Auth::user()->id)->where('status', '=', 'incomplete')->count();
-        }
         $users = User::latest()->paginate(10);
         $myProfile = User::find(Auth::user()->id)->Profile;
-        return view('users', compact('myProfile', 'users','OraderCount'));
+        return view('users', compact('myProfile', 'users'));
     }
 
     /**

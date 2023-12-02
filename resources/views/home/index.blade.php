@@ -2,6 +2,19 @@
 
 @section("content")
 <body class="home page-template page-template-template-builder page-template-template-builder-php page page-id-18 wp-custom-logo wp-embed-responsive theme-plumer woocommerce-no-js elementor-default elementor-kit-7 elementor-page elementor-page-18">
+<link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
+<script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+    @if (session('success'))
+        <script>
+            toastr.success("{{ session('success') }}");
+        </script>
+    @endif
+
+    @if (session('error'))
+        <script>
+            toastr.error("{{ session('error') }}");
+        </script>
+    @endif
     @include('partials._header')
     <div class="plumer-fluid">
       <div class="builder-page-wrapper">
@@ -89,7 +102,7 @@
                                   data-ani-delay="0.9s"
                                 >
                                   <a
-                                    href="route('home-contact')"
+                                    href="{{route('home-contact')}}"
                                     class="themeholy-btn style3"
                                     >Schedule Now
                                     <i class="fa-regular fa-arrow-right ms-2">
@@ -151,7 +164,7 @@
                                   data-ani-delay="0.9s"
                                 >
                                   <a
-                                    href="route('home-contact')"
+                                    href="{{route('home-contact')}}"
                                     class="themeholy-btn style3"
                                     >Schedule Now
                                     <i class="fa-regular fa-arrow-right ms-2">
@@ -607,109 +620,81 @@
                               ></p>
                               <ul></ul>
                             </div>
-                            <form
-                              action="/#wpcf7-f1284-p18-o1"
-                              method="post"
-                              class="wpcf7-form init"
-                              aria-label="Contact form"
-                              novalidate="novalidate"
-                              data-status="init"
-                            >
-                              <div style="display: none">
-                                <input
-                                  type="hidden"
-                                  name="_wpcf7"
-                                  value="1284"
-                                />
-
-                                <input
-                                  type="hidden"
-                                  name="_wpcf7_version"
-                                  value="5.8.3"
-                                />
-
-                                <input
-                                  type="hidden"
-                                  name="_wpcf7_locale"
-                                  value="en_US"
-                                />
-
-                                <input
-                                  type="hidden"
-                                  name="_wpcf7_unit_tag"
-                                  value="wpcf7-f1284-p18-o1"
-                                />
-
-                                <input
-                                  type="hidden"
-                                  name="_wpcf7_container_post"
-                                  value="18"
-                                />
-
-                                <input
-                                  type="hidden"
-                                  name="_wpcf7_posted_data_hash"
-                                  value=""
-                                />
-                              </div>
+                            <form action="{{ route('booking-urgent') }}" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init" >
+                            @csrf
                               <div class="appoitment-form1">
                                 <div class="form-row">
                                   <div class="form-group">
                                     <span
                                       class="wpcf7-form-control-wrap"
-                                      data-name="text-211"
+                                      data-name="name"
                                     >
                                       <input
                                         size="40"
-                                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
-                                        id="text-211"
+                                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control @error('name') is-invalid @enderror"
+                                        id="name"
                                         aria-required="true"
                                         aria-invalid="false"
                                         placeholder="Your name *"
-                                        value=""
+                                        value="{{old('name')}}"
                                         type="text"
-                                        name="text-211"
+                                        name="name"
                                       />
                                     </span>
+                                    @error('name')
+                                        <small style="display: inline-block;" class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </small>
+                                    @enderror
                                   </div>
                                   <div class="form-group">
                                     <span
                                       class="wpcf7-form-control-wrap"
-                                      data-name="email-825"
+                                      data-name="email"
                                     >
                                       <input
                                         size="40"
-                                        class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control"
-                                        id="email-825"
+                                        class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control @error('email') is-invalid @enderror"
+                                        id="email"
                                         aria-required="true"
                                         aria-invalid="false"
                                         placeholder="Your Email *"
-                                        value=""
+                                        value="{{old('email')}}"
                                         type="email"
-                                        name="email-825"
+                                        name="email"
                                       />
                                     </span>
+                                    @error('email')
+                                        <small style="display: inline-block;" class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </small>
+                                    @enderror
                                   </div>
                                   <div class="form-group">
                                     <span
                                       class="wpcf7-form-control-wrap"
-                                      data-name="tel-186"
+                                      data-name="phone"
                                     >
                                       <input
                                         size="40"
-                                        class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control"
-                                        id="tel-186"
+                                        class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control @error('phone') is-invalid @enderror"
+                                        id="phone"
                                         aria-required="true"
                                         aria-invalid="false"
                                         placeholder="Phone Number*"
-                                        value=""
-                                        type="tel"
-                                        name="tel-186"
+                                        value="{{old('phone')}}"
+                                        type="text"
+                                        name="phone"
                                       />
                                     </span>
+                                    @error('phone')
+                                        <small style="display: inline-block;" class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </small>
+                                    @enderror
                                   </div>
                                   <div class="form-btn">
-                                    <button class="themeholy-btn style3 wpcf7">
+                                    <button type="submit" class="themeholy-btn style3 wpcf7">
                                       Submit Now
                                     </button>
                                   </div>
@@ -1697,7 +1682,7 @@
       media="all"
     />
 
-    <script
+    <!-- <script
       src="{{ asset('home-assets/js/contact-form-7-includes-swv-js-index.js')}}"
       id="swv-js"
     ></script>
@@ -1709,7 +1694,7 @@
     <script
       src="{{ asset('home-assets/js/contact-form-7-includes-js-index.js')}}"
       id="contact-form-7-js"
-    ></script>
+    ></script> -->
     <script id="plumer-ajax-js-extra">
       var plumerajax = {
         action_url: "./wp-admin\/admin-ajax.php",

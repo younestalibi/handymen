@@ -51,6 +51,18 @@ class BookingController extends Controller
         return redirect()->back()->with('success', 'New Booking Created successfully');
     }
 
+    public function urgent(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+        ]);
+        $service = new Booking();
+        $service->fill($validated)->save(); 
+        return redirect()->back()->with('success', 'New Booking Created successfully');
+    }
+
     /**
      * Display the specified resource.
      *
