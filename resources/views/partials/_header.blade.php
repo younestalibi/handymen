@@ -13,7 +13,7 @@
                                             <i class="fal fa-times"></i>
                                         </button>
                                         <div class="mobile-logo">
-                                            <a class="logo" href="{{ route('home') }}"><img src="http://127.0.0.1:8000/contact-assets/images/2023-05-cropped-Untitled-2.png" alt="cropped Untitled 2" class="img-fluid" /></a>
+                                            <a class="logo" href="{{ route('home') }}"><img src="{{ asset('contact-assets/images/2023-05-cropped-Untitled-2.png')}}" alt="cropped Untitled 2" class="img-fluid" /></a>
                                         </div>
                                         <div class="themeholy-mobile-menu">
                                             <div class="themeholy-mobile-menu">
@@ -89,7 +89,7 @@
                                                 <div class="row align-items-center justify-content-between">
                                                     <div class="col-auto">
                                                         <div class="header-logo">
-                                                            <a href="{{ route('home') }}"><img src="http://127.0.0.1:8000/contact-assets/images/2023-05-Untitled-2.png" alt="Plumer" /></a>
+                                                            <a href="{{ route('home') }}"><img src="{{ asset('contact-assets/images/2023-05-Untitled-2.png')}}" alt="Plumer" /></a>
                                                         </div>
                                                     </div>
                                                     <div class="col">
