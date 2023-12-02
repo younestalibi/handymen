@@ -34,15 +34,17 @@ Auth::routes();
 //Customer
 Route::group(['prefix' => 'home'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/services', [HomeController::class, 'services'])->name('home-services');
     Route::get('/service/{id}', [HomeController::class, 'serviceDetail'])->name('home-service-detail');
     Route::get('/contact', [HomeController::class, 'contact'])->name('home-contact');
+    Route::get('/about-us', [HomeController::class, 'about'])->name('home-about');
 });
 
 //administrator
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     //home-admin
     Route::get("/",[HomeController::class, 'admin'])->name('home-admin');
-    
+
     //profile
     Route::group(['prefix' => 'profile'], function () {
         Route::get('index', [ProfileController::class, 'index'])->name('profile_index');
@@ -83,7 +85,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::get('create', [BookingController::class, 'create'])->name('booking-create');
         Route::get('edit/{id}', [BookingController::class, 'edit'])->name('booking-edit');
         Route::post('destroy/{id}', [BookingController::class, 'destroy'])->name('booking-destroy');
-        Route::post('store', [BookingController::class, 'store'])->name('booking-store');
+        Route::post('store', [BookingController::class, 'store'])->name('booking-store')->withoutMiddleware(['auth']);
         Route::post('update', [BookingController::class, 'update'])->name('booking-update');
     });
 

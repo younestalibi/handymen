@@ -51,6 +51,15 @@ class HomeController extends Controller
         return view('home.serviceDetail', compact('service'));
     }
 
+    public function services(){
+        $services = Service::paginate(6);
+        return view('home.services',compact("services"));
+    }
+    public function about(){
+        // $services = Service::paginate(6);
+        return view('home.aboutUs');
+    }
+
     public function contact(){
         $services = Service::all();
         return view('home.contact',compact("services"));

@@ -22,7 +22,7 @@ class CategoryController extends Controller
     {
         $categories = Category::paginate(3);
         $myProfile = User::find(Auth::user()->id)->Profile;
-        return view('categorie.index', compact('myProfile', 'categories'));
+        return view('categories.index', compact('myProfile', 'categories'));
     }
 
     /**
@@ -33,7 +33,7 @@ class CategoryController extends Controller
     public function create()
     {
         $myProfile = User::find(Auth::user()->id)->Profile;
-        return view('categorie.create', compact('myProfile'));
+        return view('categories.create', compact('myProfile'));
     }
 
     /**
