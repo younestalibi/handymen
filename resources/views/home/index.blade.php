@@ -474,7 +474,7 @@
                               <div class="btn-wrapper right">
                                 <a
                                   class="themeholy-btn"
-                                  href="{{ route('home') }}"
+                                  href="{{ route('home-services') }}"
                                   >Explore All Services
                                 </a>
                               </div>

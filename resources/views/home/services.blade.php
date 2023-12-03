@@ -866,9 +866,9 @@
         /> -->
         <meta name="generator" content="WordPress 6.4.1" />
         <meta name="generator" content="WooCommerce 8.3.1" />
-        <!-- <link rel="canonical" href="https://handymentocall.com/services/" />
-        <link rel="shortlink" href="https://handymentocall.com/?p=22" />
-        <link
+        <link rel="canonical" href="{{route('home-services')}}" />
+        <link rel="shortlink" href="{{route('home')}}" />
+        <!-- <link
             rel="alternate"
             type="application/json+oembed"
             href="https://handymentocall.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhandymentocall.com%2Fservices%2F"
