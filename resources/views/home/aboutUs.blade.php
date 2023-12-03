@@ -769,29 +769,29 @@
                                                 <i class="fal fa-times"></i>
                                             </button>
                                             <div class="mobile-logo">
-                                                <a class="logo" href="https://handymentocall.com/"><img src="{{asset('about-assets/images/2023-05-cropped-Untitled-2.png')}}" alt="cropped Untitled 2" class="img-fluid" /></a>
+                                                <a class="logo" href="{{route('home')}}"><img src="{{asset('about-assets/images/2023-05-cropped-Untitled-2.png')}}" alt="cropped Untitled 2" class="img-fluid" /></a>
                                             </div>
                                             <div class="themeholy-mobile-menu">
                                                 <div class="themeholy-mobile-menu">
                                                     <ul id="menu-primary-menu" class="">
                                                         <li id="menu-item-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-46">
-                                                            <a href="https://handymentocall.com/">Home</a>
+                                                            <a href="{{route('home')}}">Home</a>
                                                         </li>
                                                         <li id="menu-item-47" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-20 current_page_item menu-item-47">
-                                                            <a href="./about-us.html" aria-current="page">About Us</a>
+                                                            <a href="{{route('home-about')}}" aria-current="page">About Us</a>
                                                         </li>
                                                         <li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50">
-                                                            <a href="https://handymentocall.com/services/">Services</a>
+                                                            <a href="{{route('home-services')}}">Services</a>
                                                         </li>
                                                         <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60">
-                                                            <a href="https://handymentocall.com/contact/">Contact</a>
+                                                            <a href="{{route('home-contact')}}">Contact</a>
                                                         </li>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="popup-search-box d-none d-lg-block">
+                                    <!-- <div class="popup-search-box d-none d-lg-block">
                                         <button class="searchClose border-theme text-theme">
                                             <i class="fal fa-times"></i>
                                         </button>
@@ -800,7 +800,7 @@
                                                 <i class="fal fa-search"></i>
                                             </button>
                                         </form>
-                                    </div>
+                                    </div> -->
                                     <div class="themeholy-header header-layout1 header-layout2">
                                         <div class="header-top">
                                             <div class="container themeholy-container">
@@ -845,7 +845,7 @@
                                                     <div class="row align-items-center justify-content-between">
                                                         <div class="col-auto">
                                                             <div class="header-logo">
-                                                                <a href="https://handymentocall.com/"><img src="{{asset('about-assets/images/2023-05-Untitled-2.png')}}" alt="Plumer" /></a>
+                                                                <a href="{{route('home')}}"><img src="{{asset('about-assets/images/2023-05-Untitled-2.png')}}" alt="Plumer" /></a>
                                                             </div>
                                                         </div>
                                                         <div class="col">
@@ -902,17 +902,17 @@
                                                                         <nav class="main-menu d-none d-lg-inline-block">
                                                                             <ul id="menu-primary-menu-1" class="evona-menu">
                                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-46">
-                                                                                    <a href="https://handymentocall.com/">Home</a>
+                                                                                    <a href="{{route('home')}}">Home</a>
                                                                                 </li>
                                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-20 current_page_item menu-item-47">
-                                                                                    <a href="./about-us.html" aria-current="page">About
+                                                                                    <a href="{{route('home-about')}}" aria-current="page">About
                                                                                         Us</a>
                                                                                 </li>
                                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50">
-                                                                                    <a href="https://handymentocall.com/services/">Services</a>
+                                                                                    <a href="{{route('home-services')}}">Services</a>
                                                                                 </li>
                                                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60">
-                                                                                    <a href="https://handymentocall.com/contact/">Contact</a>
+                                                                                    <a href="{{route('home-contact')}}">Contact</a>
                                                                                 </li>
                                                                             </ul>
                                                                         </nav>
@@ -946,7 +946,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">About Us</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="https://handymentocall.com">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li>About Us</li>
                 </ul>
             </div>
@@ -1171,7 +1171,7 @@
                                                     <div class="elementor-widget-container">
                                                         <!-- Button -->
                                                         <div class="btn-wrapper left">
-                                                            <a class="themeholy-btn" href="https://handymentocall.com/contact/">Schedule
+                                                            <a class="themeholy-btn" href="{{route('home-contact')}}">Schedule
                                                                 Now</a>
                                                         </div>
                                                         <!-- End Button -->
@@ -1382,8 +1382,8 @@
                                                         <!-- Button -->
                                                         <div class="w-100 btn-group-wrap">
                                                             <div class="btn-group">
-                                                                <a href="https://handymentocall.com/contact/" class="themeholy-btn themeholy-btn style3">Schedule
-                                                                    Now</a><a href="https://handymentocall.com/contact/" class="themeholy-btn themeholy-btn style2">Contact
+                                                                <a href="{{route('home-contact')}}" class="themeholy-btn themeholy-btn style3">Schedule
+                                                                    Now</a><a href="{{route('home-contact')}}" class="themeholy-btn themeholy-btn style2">Contact
                                                                     Us</a>
                                                             </div>
                                                         </div>
@@ -1571,7 +1571,7 @@
                                                 <div class="elementor-widget-container">
                                                     <div class="themeholy-widget-about">
                                                         <div class="about-logo">
-                                                            <a href="https://handymentocall.com"><img src="{{asset('about-assets/images/2023-05-Untitled-2.png')}}" alt="Handymen To Call" /></a>
+                                                            <a href="{{route('home')}}"><img src="{{asset('about-assets/images/2023-05-Untitled-2.png')}}" alt="Handymen To Call" /></a>
                                                         </div>
                                                         <p class="about-text">
                                                             We're here to
@@ -1615,17 +1615,17 @@
                                                     <div class="menu-footer-top-menu-container">
                                                         <ul id="menu-footer-top-menu" class="menu">
                                                             <li id="menu-item-2810" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-2810">
-                                                                <a href="https://handymentocall.com/">Home</a>
+                                                                <a href="{{route('home')}}">Home</a>
                                                             </li>
                                                             <li id="menu-item-2805" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-20 current_page_item menu-item-2805">
-                                                                <a href="./about-us.html" aria-current="page">About
+                                                                <a href="{{route('home-about')}}" aria-current="page">About
                                                                     Us</a>
                                                             </li>
                                                             <li id="menu-item-2807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2807">
-                                                                <a href="https://handymentocall.com/services/">Services</a>
+                                                                <a href="{{route('home-services')}}">Services</a>
                                                             </li>
                                                             <li id="menu-item-2806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2806">
-                                                                <a href="https://handymentocall.com/contact/">Contact</a>
+                                                                <a href="{{route('home-contact')}}">Contact</a>
                                                             </li>
                                                         </ul>
                                                     </div>
