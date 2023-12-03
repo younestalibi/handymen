@@ -29,25 +29,7 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="col-lg-6 col-md-12 col-4 mb-4">
-            <div class="card shadow-lg rounded">
-                <div class="card-body">
-                    <div class="card-header font-monospace fs-3 text-success px-0">
-                        Cars Total Sum
-                    </div>
-                    <div class="card-title d-flex align-items-center justify-content-between">
-                        <div class="fs-1">
-                            <span class="rounded text-success"><i class="fa-solid fa-circle-dollar-to-slot"></i></span>
-                        </div>
-                        <div class="fs-1">
-                            <span class="rounded text-success">{{ $sumCarPrise }}
-                                <small><i class="fs-3 fa-solid fa-dollar-sign"></i></small>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+     
     </div>
     <div class="row">
         <div class="col-12">

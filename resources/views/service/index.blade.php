@@ -53,7 +53,6 @@
                                                         src="{{ asset('users/services/' . $service->picture) }}" />
                                                 </td>
                                                 <td>{{ $service->created_at->diffforhumans() }}</td>
-                                                {{-- <td>{{ $service->updated_at->diffforhumans() }}</td> --}}
                                                 <td>
                                                     <a href="{{ route('service-edit', ['id' => $service->id]) }}"
                                                         id="{{ $service->id }}"

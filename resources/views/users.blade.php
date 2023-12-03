@@ -42,10 +42,6 @@
                                                 <td>{{ $user->created_at->diffforhumans() }}</td>
                                                 <td>{{ $user->updated_at->diffforhumans() }}</td>
                                                 <td>
-                                                    {{-- <button type="button" id="{{ $user->id }}"
-                                                        class="btn btnEditUsres btn-sm btn-s rounded-pill btn-icon btn-outline-info">
-                                                        <span class="tf-icons bx bx-edit"></span>
-                                                    </button> --}}
                                                     <button type="button" id="{{ $user->id }}"
                                                         class="btn btnDeleteUsres btn-sm btn-s rounded-pill btn-icon btn-outline-danger">
                                                         <span class="tf-icons fa-solid fa-trash"></span>
