@@ -967,9 +967,12 @@
                                                             <img decoding="async" src="{{ asset('users/services/' . $service->picture) }}" alt="medium shot smiley people wearing helmets" />
                                                         </div>
                                                         <h3 class="box-title">
-                                                            <a href="{{ route('home-service-detail',$id=$service->id) }}" >{{$service->name}}</a >
+                                                            <a style="font-size: x-large;" href="{{ route('home-service-detail',$id=$service->id) }}" >{{$service->name}}</a >
                                                         </h3>
-                                                        <p class="service-block_text" >{{$service->description}}</p>
+                                                        <p class="service-block_text">
+                                                            {{ str_pad(substr($service->description, 0, 140), 140, ' ', STR_PAD_RIGHT) }}...
+                                                        </p>
+
                                                         <a href="{{ route('home-service-detail',$id=$service->id) }}" class="themeholy-btn" >View Details</a >
                                                         <div class="ripple-shape" >
                                                             <span class="ripple-1" ></span >

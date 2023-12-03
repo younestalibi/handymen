@@ -523,14 +523,14 @@
                                       <div class="service-card_content">
                                         <div class="shape1"></div>
                                         <h3 class="box-title">
-                                          <a
+                                          <a style="font-size: x-large;"
                                             href="{{ route('home-service-detail',$id=$service->id) }}"
                                             >
                                             {{ $service->name }}
                                           </a>
                                         </h3>
                                         <p class="service-card_text">
-                                        {{ Str::limit($service->description, $limit = 140, $end = '...')  }}
+                                        {{ str_pad(substr($service->description, 0, 140), 140, ' ', STR_PAD_RIGHT) }}...
                                         </p>
                                         <a
                                           href="{{ route('home-service-detail',$id=$service->id) }}"

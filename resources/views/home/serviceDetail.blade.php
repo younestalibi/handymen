@@ -1006,7 +1006,7 @@
                                                                     <div class="elementor-widget-container">
                                                                         <div class="widget widget_call" data-bg-src="assets/img/bg/widget_bg_1.jpg">
                                                                             <div class="widget-call">
-                                                                                <h4 class="box-title">
+                                                                                <h4 class="box-title" style="font-size: larger;">
                                                                                     For
                                                                                     {{ $service->name }}
                                                                                     Services
