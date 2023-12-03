@@ -238,7 +238,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="icon-box">
+                        <div class="icon-box" style="left: auto;right:8% !important">
                           <button
                             data-slick-prev=".hero-slider-1"
                             class="slick-arrow default"
