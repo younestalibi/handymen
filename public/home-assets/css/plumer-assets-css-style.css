@@ -6922,7 +6922,7 @@ ul.comment-list:has(> .themeholy-comment-item ~ .themeholy-comment-item):first-c
   position: absolute;
   top: 50%;
   /* left: 8%; */
-  right: 8%;
+  right: 12%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 46px;
