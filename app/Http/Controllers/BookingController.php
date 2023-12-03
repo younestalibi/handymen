@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Booking;
+use App\Mail\MailNotify;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class BookingController extends Controller
 {
@@ -46,8 +48,16 @@ class BookingController extends Controller
             'phone' => 'required',
             'message' => 'nullable',
         ]);
-        $service = new Booking();
-        $service->fill($validated)->save(); 
+        $booking = new Booking();
+        $booking->fill($validated)->save(); 
+        $data = [
+            'service' => $booking->service->name,
+            'date' => $booking->created_at,
+            'name' => $booking->name,
+            'email' => $booking->email,
+            'phone' => $booking->phone,
+        ];
+        Mail::to("younessetalibi11@gmail.com")->send(new MailNotify($data));
         return redirect()->back()->with('success', 'New Booking Created successfully');
     }
 
@@ -58,8 +68,16 @@ class BookingController extends Controller
             'email' => 'required',
             'phone' => 'required',
         ]);
-        $service = new Booking();
-        $service->fill($validated)->save(); 
+        $booking = new Booking();
+        $booking->fill($validated)->save(); 
+        $data = [
+            'service' => 'urgent',
+            'date' => $booking->created_at,
+            'name' => $booking->name,
+            'email' => $booking->email,
+            'phone' => $booking->phone,
+        ];
+        Mail::to("younessetalibi11@gmail.com")->send(new MailNotify($data));
         return redirect()->back()->with('success', 'New Booking Created successfully');
     }
 
