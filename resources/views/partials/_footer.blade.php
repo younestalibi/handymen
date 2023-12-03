@@ -12,7 +12,7 @@
                                             <div class="elementor-widget-container">
                                                 <div class="themeholy-widget-about">
                                                     <div class="about-logo">
-                                                        <a href="{{ route('home') }}"><img src="http://127.0.0.1:8000/about-assets/images/2023-05-Untitled-2.png" alt="Handymen To Call" /></a>
+                                                        <a href="{{ route('home') }}"><img src="{{ asset('about-assets/images/2023-05-Untitled-2.png')}}" alt="Handymen To Call" /></a>
                                                     </div>
                                                     <p class="about-text">
                                                         We're here to
