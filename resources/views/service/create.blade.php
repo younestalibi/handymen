@@ -42,6 +42,7 @@
                                         <label for="category_id" class="form-label" for="basic-default-category_id">Select a Category:</label>
                                         <select id="category_id" name="category_id" placeholder="category" 
                                         class="form-control @error('category_id') is-invalid @enderror " value="{{old('category_id')}}">
+                                            <option value="" disabled selected>Select category</option>
                                             @foreach($categories as $category)
                                                 <option value="{{$category->id}}">{{$category->name}}</option>
                                             @endforeach

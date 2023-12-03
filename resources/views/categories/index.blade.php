@@ -29,6 +29,7 @@
                                         <th>#</th>
                                         <th>Name</th>
                                         <th>Description</th>
+                                        <th>picture</th>
                                         <th>Created</th>
                                         <th>Actions</th>
                                     </tr>
@@ -43,6 +44,12 @@
                                                 <td>{{ $count++ }}</td>
                                                 <td>{{ $categorie->name }}</td>
                                                 <td>{{ Str::limit($categorie->description, $limit = 100, $end = '...')  }}</td>
+                                                <td class="col-2">
+                                                    <img class="img-fluid"
+                                                        src="{{ asset('users/categories/' . $categorie->picture) }}" 
+                                                        style="background: #00000026;border-radius: 5px"    
+                                                    />
+                                                </td>
                                                 <td>{{ $categorie->created_at->diffforhumans() }}</td>
                                                 <td>
                                                     <a href="{{ route('categorie-edit', ['id' => $categorie->id]) }}"

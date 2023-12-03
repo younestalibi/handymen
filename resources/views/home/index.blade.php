@@ -518,7 +518,7 @@
                                 <div class="col-md-6 col-xl-4">
                                     <div class="service-card">
                                       <div class="service-card_icon">
-                                        <img decoding="async" src="{{ asset('users/services/' . $service->picture) }}" alt="22" />
+                                        <img decoding="async" src="{{ asset('users/categories/' . $service->category->picture) }}" alt="22" />
                                       </div>
                                       <div class="service-card_content">
                                         <div class="shape1"></div>
@@ -549,7 +549,7 @@
                                     </div>
                                   </div>
                                 @endforeach
-                                <style style="display:none">
+                                <!-- <style style="display:none">
                                   .service-card_icon img {
                                       -webkit-filter:none !important; 
                                       width: 100% !important;
@@ -557,7 +557,7 @@
                                       border-radius:50% !important;
                                       object-fit: cover !important;
                                   }
-                                </style>
+                                </style> -->
                                 </div>
                               </div>
                             </div>

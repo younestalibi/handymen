@@ -46,11 +46,20 @@ class CategoryController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'picture'=>'required'
         ]);
-        $Category = new Category();
-        $Category->fill($validated)->save();   
-        return redirect()->back()->with('success', 'New Category Created successfully');
+      
+        if ($request->hasFile($request->input('picture'))) {
+            $Category = new Category();
+            $file = $request->file('picture');
+            $extension  = $file->getClientOriginalExtension();
+            $fileName = time() . '.' . $extension;
+            $file->move('users/categories', $fileName);
+            $validated['picture']= $fileName;
+            $Category->fill($validated)->save();   
+            return redirect()->back()->with('success', 'New Category Created successfully');
+        }
         
     }
 
@@ -75,7 +84,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $myProfile = User::find(Auth::user()->id)->Profile;
-        return view('categorie.edit', compact('category', 'myProfile'));
+        return view('categories.edit', compact('category', 'myProfile'));
     }
 
     /**
@@ -92,6 +101,24 @@ class CategoryController extends Controller
             'description' => 'required'
         ]);
         $Category = Category::findOrFail($request->id);
+
+        if ($request->hasFile('picture')) {
+            if (!empty($Category->picture)) {
+                $previousPicturePath = public_path('users/categories/' . $Category->picture);
+                if (file_exists($previousPicturePath)) {
+                    unlink($previousPicturePath);
+                }
+            }
+        
+            $file = $request->file('picture');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = time() . '.' . $extension;
+            $file->move('users/categories', $fileName);
+        
+            $validated['picture'] = $fileName;
+        }
+        
+
         $Category->fill($validated)->save();   
         return redirect()->back()->with('success', 'New Category updated successfully');
     }
