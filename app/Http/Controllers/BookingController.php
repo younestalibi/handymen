@@ -57,7 +57,7 @@ class BookingController extends Controller
             'email' => $booking->email,
             'phone' => $booking->phone,
         ];
-        Mail::to("younessetalibi11@gmail.com")->send(new MailNotify($data));
+        Mail::to("info@handymentocall.com")->send(new MailNotify($data));
         return redirect()->back()->with('success', 'New Booking Created successfully');
     }
 
@@ -77,7 +77,7 @@ class BookingController extends Controller
             'email' => $booking->email,
             'phone' => $booking->phone,
         ];
-        Mail::to("younessetalibi11@gmail.com")->send(new MailNotify($data));
+        Mail::to("info@handymentocall.com")->send(new MailNotify($data));
         return redirect()->back()->with('success', 'New Booking Created successfully');
     }
 
