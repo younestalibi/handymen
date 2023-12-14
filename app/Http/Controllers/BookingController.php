@@ -57,8 +57,17 @@ class BookingController extends Controller
             'email' => $booking->email,
             'phone' => $booking->phone,
         ];
-        Mail::to("info@handymentocall.com")->send(new MailNotify($data));
-        return redirect()->back()->with('success', 'New Booking Created successfully');
+        // return redirect()->back()->with('error','Email sending failed.')->with('success', 'New Booking Created successfully');
+        // // Mail::to("info@handymentocall.com")->send(new MailNotify($data));
+        // return redirect()->back()->with('success', 'New Booking Created successfully');
+
+
+        try {
+            Mail::to("info@handymentocall.com")->send(new MailNotify($data));
+            return redirect()->back()->with('success', 'New Booking Created successfully');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error','Email sending failed.')->with('success', 'New Booking Created successfully');
+        }
     }
 
     public function urgent(Request $request)
@@ -77,8 +86,14 @@ class BookingController extends Controller
             'email' => $booking->email,
             'phone' => $booking->phone,
         ];
-        Mail::to("info@handymentocall.com")->send(new MailNotify($data));
-        return redirect()->back()->with('success', 'New Booking Created successfully');
+        // Mail::to("info@handymentocall.com")->send(new MailNotify($data));
+        // return redirect()->back()->with('success', 'New Booking Created successfully');
+        try {
+            Mail::to("info@handymentocall.com")->send(new MailNotify($data));
+            return redirect()->back()->with('success', 'New Booking Created successfully');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error','Email sending failed.')->with('success', 'New Booking Created successfully');
+        }
     }
 
     /**

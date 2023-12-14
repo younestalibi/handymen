@@ -69,11 +69,11 @@
                                                             </li>
                                                             <li>
                                                                 <div class="social-links">
-                                                                    <a target="_blank" rel="nofollow" href="http://facebook.com"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
-                                                                    <a target="_blank" rel="nofollow" href="http://twitter.com"><i aria-hidden="true" class="fab fa-twitter"></i></a>
-                                                                    <a target="_blank" rel="nofollow" href="http://linkedin.com"><i aria-hidden="true" class="fab fa-linkedin-in"></i></a>
-                                                                    <a target="_blank" rel="nofollow" href="http://instagram.com"><i aria-hidden="true" class="fab fa-instagram"></i></a>
-                                                                    <a target="_blank" rel="nofollow" href="http://youtube.com"><i aria-hidden="true" class="fab fa-youtube"></i></a>
+                                                                    <a target="_blank" rel="nofollow" href="https://www.facebook.com/handymentocall/"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
+                                                                    <a target="_blank" rel="nofollow" href="https://twitter.com/handymentocall"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                                                    <a target="_blank" rel="nofollow" href="https://www.linkedin.com/company/handymen-to-call"><i aria-hidden="true" class="fab fa-linkedin-in"></i></a>
+                                                                    <!-- <a target="_blank" rel="nofollow" href="http://instagram.com"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+                                                                    <a target="_blank" rel="nofollow" href="http://youtube.com"><i aria-hidden="true" class="fab fa-youtube"></i></a> -->
                                                                 </div>
                                                             </li>
                                                         </ul>
