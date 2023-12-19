@@ -1,7 +1,7 @@
 @extends('layouts.container')
 
 @section('title')
-    Edit Service
+    Edit Blogs
 @endsection
 
 
@@ -12,20 +12,21 @@
         <div class="container-xxl flex-grow-1">
             <div class="row">
                 <div class="col-md-12">
-                    <!-- All Services -->
+                    <!-- All Blogs -->
                     <div class="card">
                         <h5 class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
-                                <a href="{{ route('service-index') }}" class="btn btn-info">
+                                <a href="{{ route('blog-index') }}" class="btn btn-info">
                                     <span class="tf-icons fa-solid fa-angles-left"></span> &nbsp; Back
                                 </a>
                             </div>
                         </h5>
                         <div class="card-body">
-                            <form action="{{ route('service-update') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('blog-update') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-                                    <input type="hidden" name="id" value="{{ $service->id }}">
+                                    <input type="hidden" name="id" value="{{ $blog->id }}">
+                                    
                                     <div class="col-md-4 col-sm-12 mb-3">
                                         <label class="form-label" for="basic-default-name">Name of Service</label>
                                         <input type="text" class="form-control @error('name') is-invalid @enderror " value="{{ old('name', $service->name) }}"

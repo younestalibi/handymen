@@ -67,6 +67,14 @@
                             <div data-i18n="Services text-info">Booking</div>
                         </a>
                     </li>
+
+                    <!--All Blogs-->
+                    <li class="menu-item @if (request()->routeIs('blog-index')) active open @endif">
+                        <a href="{{ route('blog-index') }}" class="menu-link">
+                            <i class='menu-icon tf-icons bx bx-briefcase-alt-2'></i>
+                            <div data-i18n="Services text-info">Blogs</div>
+                        </a>
+                    </li>
                 </ul>
             </aside>
             <!-- / Menu -->

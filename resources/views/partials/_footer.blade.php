@@ -65,6 +65,9 @@
                                                         <li id="menu-item-2807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2807">
                                                             <a href="{{ route('home-services') }}">Services</a>
                                                         </li>
+                                                        <li id="menu-item-2807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2807">
+                                                            <a href="{{ route('home-blogs') }}">Blogs</a>
+                                                        </li>
                                                         <li id="menu-item-2806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2806">
                                                             <a href="{{ route('home-contact') }}">Contact</a>
                                                         </li>

@@ -27,6 +27,9 @@
                                                     <li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50">
                                                         <a href="{{ route('home-services') }}">Services</a>
                                                     </li>
+                                                    <li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50">
+                                                        <a href="{{ route('home-blogs') }}">Blogs</a>
+                                                    </li>
                                                     <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-42 current_page_item menu-item-60">
                                                         <a href="{{ route('home-contact') }}" aria-current="page">Contact</a>
                                                     </li>
@@ -154,6 +157,9 @@
                                                                             </li>
                                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50">
                                                                                 <a href="{{ route('home-services') }}">Services</a>
+                                                                            </li>
+                                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50">
+                                                                                <a href="{{ route('home-blogs') }}">Blogs</a>
                                                                             </li>
                                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-42 current_page_item menu-item-60">
                                                                                 <a href="{{ route('home-contact') }}" aria-current="page">Contact</a>

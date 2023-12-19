@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\Blog;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Booking;
@@ -50,6 +51,7 @@ class HomeController extends Controller
         $service = Service::findOrFail($id);
         return view('home.serviceDetail', compact('service'));
     }
+    
 
     public function services(){
         $services = Service::paginate(6);
@@ -63,6 +65,17 @@ class HomeController extends Controller
     public function contact(){
         $services = Service::all();
         return view('home.contact',compact("services"));
+    }
+
+    public function blogs(){
+        $blogs = Blog::orderBy('created_at','desc')->whereNotNull('content')->paginate(6);
+        return view('home.blogs', compact('blogs'));
+
+    }
+
+    public function blogDetail($id){
+        $blog = Blog::findOrFail($id);
+        return view('home.blogDetail', compact('blog'));
     }
 
     

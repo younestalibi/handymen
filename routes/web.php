@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
@@ -39,7 +40,10 @@ Route::group(['prefix' => 'home'], function () {
     Route::get('/service/{id}', [HomeController::class, 'serviceDetail'])->name('home-service-detail');
     Route::get('/contact', [HomeController::class, 'contact'])->name('home-contact');
     Route::get('/about-us', [HomeController::class, 'about'])->name('home-about');
+    Route::get('/blogs', [HomeController::class, 'blogs'])->name('home-blogs');
+    Route::get('/blogs/{id}', [HomeController::class, 'blogDetail'])->name('home-blog-detail');
 });
+
 
 //administrator
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
@@ -79,6 +83,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         Route::post('store', [CategoryController::class, 'store'])->name('categorie-store');
         Route::post('update', [CategoryController::class, 'update'])->name('categorie-update');
     });
+
+    //blog
+    Route::group(['prefix' => 'blogs'], function () {
+        Route::get('index', [BlogController::class, 'index'])->name('blog-index');
+        Route::get('create', [BlogController::class, 'create'])->name('blog-create');
+        Route::get('edit/{blog}', [BlogController::class, 'edit'])->name('blog-edit');
+        Route::post('destroy/{id}', [BlogController::class, 'destroy'])->name('blog-destroy');
+        Route::post('store', [BlogController::class, 'store'])->name('blog-store');
+        Route::post('update', [BlogController::class, 'update'])->name('blog-update');
+    });
     
     //booking 
     Route::group(['prefix' => 'bookings'], function () {
@@ -93,3 +107,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 });
 
 
+Route::get('update', [BlogController::class, 'generateNewArticle']);
+Route::get('/generate-titles', [BlogController::class, 'generateTitles'])->name('generate.titles');

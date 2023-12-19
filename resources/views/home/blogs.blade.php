@@ -7,7 +7,7 @@
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Services &#8211; Handymen To Call</title>
+        <title>Blogs &#8211; Handymen To Call</title>
         <meta name="robots" content="max-image-preview:large" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <!-- <link
@@ -935,10 +935,10 @@
         <div class="breadcumb-wrapper">
             <div class="container z-index-common">
                 <div class="breadcumb-content">
-                    <h1 class="breadcumb-title">Services</h1>
+                    <h1 class="breadcumb-title">Blogs</h1>
                     <ul class="breadcumb-menu">
                         <li><a href="{{route('home')}}">Home</a></li>
-                        <li>Services</li>
+                        <li>Blogs</li>
                     </ul>
                 </div>
             </div>
@@ -954,26 +954,22 @@
                                     <div class="elementor-element elementor-element-4e4a9e5 elementor-widget elementor-widget-plumerservice" data-id="4e4a9e5" data-element_type="widget" data-widget_type="plumerservice.default" >
                                         <div class="elementor-widget-container">
                                             <div class="row gy-30">
-                                                @foreach($services as $service)
+                                                @foreach($blogs as $blog)
                                                 <div class="col-md-6 col-xl-4">
+                                                    <style>.service-block::before{background-color: #20cfc5 !important;}</style>
                                                     <div class="service-block">
-                                                        <div class="shape1" ></div>
-                                                        <div class="service-block_icon" >
-                                                            <div class="icon">
-                                                                <img decoding="async" src="{{ asset('users/categories/' . $service->category->picture) }}" alt="service_grid_1" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="service-block_img" >
-                                                            <img decoding="async" src="{{ asset('users/services/' . $service->picture) }}" alt="medium shot smiley people wearing helmets" />
-                                                        </div>
+                                                        <!-- <div class="shape1" ></div>                                                        -->
                                                         <h3 class="box-title">
-                                                            <a style="font-size: x-large;" href="{{ route('home-service-detail',$id=$service->id) }}" >{{$service->name}}</a >
+                                                            <a style="font-size: x-large;" href="{{ route('home-blog-detail',$id=$blog->id) }}" >
+                                                                {{$blog->title}}
+                                                            </a >
                                                         </h3>
                                                         <p class="service-block_text">
-                                                            {{ str_pad(substr($service->description, 0, 140), 140, ' ', STR_PAD_RIGHT) }}...
+                                                        {{ mb_strimwidth(strip_tags($blog->content), 0, 140, '...') }}
+
                                                         </p>
 
-                                                        <a href="{{ route('home-service-detail',$id=$service->id) }}" class="themeholy-btn" >View Details</a >
+                                                        <a href="{{ route('home-blog-detail',$id=$blog->id) }}" class="themeholy-btn" >View Details</a >
                                                         <div class="ripple-shape" >
                                                             <span class="ripple-1" ></span >
                                                             <span class="ripple-2" ></span >
@@ -987,7 +983,7 @@
                                                 @endforeach
                                             </div>
                                             <div class="mt-4">
-                                                {{ $services->links('pagination::bootstrap-4') }}
+                                                {{ $blogs->links('pagination::bootstrap-4') }}
 
                                             </div>
                                         </div>
