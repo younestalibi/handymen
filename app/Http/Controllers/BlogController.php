@@ -153,7 +153,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        dd('still working it');
+        echo "<h1>still working it</h1>";
         // $myProfile = User::find(Auth::user()->id)->Profile;
         // return view('blogs.edit', compact('blog', 'myProfile'));
     }
