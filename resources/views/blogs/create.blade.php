@@ -42,7 +42,7 @@ don't forget to use ;"
                                         @enderror
                                     </div>
 
-                                    <!-- <div class="col-md-6 col-sm-12 mb-3">
+                                    <div class="col-md-6 col-sm-12 mb-3">
                                         <label class="form-label" for="basic-default-keyword">Generate Titles<code>(Keywords must be separated by [;])</code></label>
                                         <input type="text" class="mb-3 form-control @error('keyword') is-invalid @enderror" value="{{ old('keyword') }}"
                                             id="keyword" name="keyword" placeholder="Enter Keywords Of different topics">
@@ -57,7 +57,7 @@ don't forget to use ;"
                                             Generate Titles
                                         </button>
                                         <small id="error-message" style="color: red;"></small>
-                                    </div> -->
+                                    </div>
 
 
 

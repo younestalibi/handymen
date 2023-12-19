@@ -83,8 +83,8 @@ class BlogController extends Controller
                     throw new \Exception("Error: Unable to generate content. Check OpenAI response.");
                 }
             } catch (\Exception $e) {
-                Cache::put('your_scheduled_task_error', 'Error generating article. Please check your API key or try again later.');
-                return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+                Cache::put('your_scheduled_task_error', $e->getMessage());
+                // return redirect()->back()->withErrors(['error' => $e->getMessage()]);
             }
         }
     }
