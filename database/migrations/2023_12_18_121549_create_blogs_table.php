@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('picture')->nullable();
+            $table->enum('status', ['Posted', 'Not posted'])->default('pending');
             $table->text('content')->nullable();
             $table->timestamps();
         });

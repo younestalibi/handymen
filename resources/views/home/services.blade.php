@@ -956,7 +956,7 @@
                                             <div class="row gy-30">
                                                 @foreach($services as $service)
                                                 <div class="col-md-6 col-xl-4">
-                                                    <div class="service-block">
+                                                    <div class="service-block"> 
                                                         <div class="shape1" ></div>
                                                         <div class="service-block_icon" >
                                                             <div class="icon">

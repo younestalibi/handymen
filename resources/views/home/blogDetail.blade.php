@@ -758,11 +758,7 @@ body, h1, h2, h3, p {
     padding: 0;
 }
 
-/* Apply a basic style to the container */
-.article-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
+
 
 h1, h2, h3 {
     color: #333; 
@@ -790,16 +786,38 @@ p a {
     color: #007BFF;
     text-decoration: underline; 
 }
-#content{
-    width: 80vw;
-    margin:100px auto;
-}
+
 @media (max-width: 600px) {
     #content {
         padding: 10px; 
 
     }
 }
+.article-container {
+    width: 85vw;
+    padding: 30px;
+    margin: 60px auto !important;
+    margin: auto;
+}
+
+.image-article {
+    max-height: 500px;
+    width: 500px;
+    margin: 20px;
+    float: right;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 1024px) {
+    .image-article {
+        float: none;
+        width: 100%;
+        max-height: none; 
+        margin-right: 0; 
+        margin: 0px;
+    }
+}
+
 
     </style>
 </head>
@@ -818,7 +836,11 @@ p a {
             </div>
         </div>
     </div>
-    {!! $blog->content !!}
+    <div class='article-container'>
+        <img class='image-article' src="{{ asset($blog->picture) }}" alt="article image " />
+        {!! $blog->content !!}
+    </div>
+    
 
 
     @include('partials._footer')

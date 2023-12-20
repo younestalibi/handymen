@@ -7,6 +7,12 @@
 
 @section('m-content')
     <!-- Content wrapper -->
+    <div>
+        
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link href="{{ asset('textRich/editor.css') }}" type="text/css" rel="stylesheet"/>
+    </div>
     <div class="content-wrapper">
         <!-- Content -->
         <div class="container-xxl flex-grow-1">
@@ -22,16 +28,15 @@
                             </div>
                         </h5>
                         <div class="card-body">
-                            <form action="{{ route('blog-update') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('blog-update') }}" method="post" enctype="multipart/form-data" id='myform'>
                                 @csrf
                                 <div class="row">
                                     <input type="hidden" name="id" value="{{ $blog->id }}">
-                                    
                                     <div class="col-md-4 col-sm-12 mb-3">
-                                        <label class="form-label" for="basic-default-name">Name of Service</label>
-                                        <input type="text" class="form-control @error('name') is-invalid @enderror " value="{{ old('name', $service->name) }}"
-                                            id="name" name="name" placeholder="Name of service">
-                                        @error('name')
+                                        <label class="form-label" for="basic-default-title">Title of Blog</label>
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror " value="{{ old('title', $blog->title) }}"
+                                            id="title" name="title" placeholder="Name of service">
+                                        @error('title')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -39,68 +44,37 @@
                                     </div>
                  
                                     <div class="col-md-4 col-sm-12 mb-3">                                   
-                                        <label for="category_id" class="form-label" for="basic-default-category_id">Select a Category:</label>
-                                        <select id="category_id" name="category_id" placeholder="category" 
-                                        class="form-control @error('category_id') is-invalid @enderror " value="{{old('category_id')}}">
-                                            @foreach($categories as $category)
-                                                <option value="{{$category->id}}" {{ $service->category_id == $category->id ? 'selected' : '' }}>{{$category->name}}</option>
-                                            @endforeach
+                                        <label for="status" class="form-label" for="basic-default-status">Select a Status:</label>
+                                        <select id="status" name="status" placeholder="status" 
+                                        class="form-control @error('status') is-invalid @enderror " value="{{old('status')}}">
+                                                <option value="Posted" {{ $blog->status== "Posted" ? 'selected' : '' }}>Posted</option>
+                                                <option value="Not posted" {{ $blog->status== "Not posted" ? 'selected' : '' }}>Not posted</option>
                                         </select>
-                                        @error('service_category')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                    
-
-
-                                    {{-- ------- --}}
-                                    <div class="col-md-4 col-sm-12 mb-3">
-                                        <label class="form-label" for="basic-default-duration">Service Duration</label>
-                                        <input type="number" class="form-control @error('duration') is-invalid @enderror " value="{{old('duration', $service->duration)}}"
-                                            id="duration" name="duration" placeholder="Duration of service">
-                                        @error('duration')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div> 
-                
-                                   
-                                    <div class="col-md-4 col-sm-12 mb-3 feature-extra">
-                                        <label for="floatingTextarea2">Description of service</label>
-                                        <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror"
-                                            placeholder="Description of service"
-                                            style="max-height:120px ;height: 100px">
-                                            {{ old('description', $service->description) }}
-                                        </textarea>
-                                        @error('description')
+                                        @error('status')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
 
-
-                                    {{-- ------- --}}
-                                    @if(!is_null($service->features))
-                                    <label class="form-label" for="features">Service Features:</label>
-                                    @foreach($service->features as $key=>$feature)
-                                    <div class='col-md-4 col-sm-12 mb-3 feature-extra'>
-                                        <input value='{{$feature["title"]}}' type="text" name="features[{{$key}}][title]" class="mb-2 form-control @error('features') is-invalid @enderror "   placeholder="Feature Title">
-                                        <textarea name="features[{{$key}}][description]" placeholder="Feature Description" 
-                                        class="mb-2 form-control @error('features') is-invalid @enderror"
-                                        style="max-height:120px ;height: 100px"
-                                        >{{ $feature["description"] }}</textarea> 
+                                    <input type="hidden" name="content" id="contentInput">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-12 nopadding">
+                                                        <textarea id="txtEditor" contenteditable="true"></textarea> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    @endforeach
-                                    @endif        
+
                                
                                     <div
                                         class="col-md-12 col-sm-12 mb-3 d-flex justify-content-start align-items-center gap-4">
                                         <div class="col-5">
-                                            <img src="{{ asset('users/services/'.$service->picture) }}" alt="user-avatar"
+                                            <img src="{{ asset($blog->picture) }}" alt="user-avatar"
                                                 class="d-block rounded img-fluid" id="uploadedAvatar" />
                                         </div>
                                         <div class="button-wrapper">
@@ -125,7 +99,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12 col-sm-12 mb-3 text-center">
-                                        <button type="submit" class="btn btn-info">
+                                        <button class="btn btn-info" id='submitButton'>
                                             <span class="tf-icons bx bxs-save"></span> &nbsp; Update
                                         </button>
                                     </div>
@@ -139,6 +113,26 @@
             </div>
         </div>
         <!-- / Content -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+            var jQueryFirst = jQuery.noConflict(true);
+        </script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="{{asset('textRich/editor.js')}}"></script>
+		<script>
+			$(document).ready(function() {
+				$("#txtEditor").Editor();
+				var editor = $("#txtEditor").data('editor');
+                editor.append(`{!! addslashes($blog->content) !!}`);
+                console.log(editor)
+                console.log(editor.html())
+                $("#submitButton").on("click", function () {
+                    var editorContent = editor.html();
+                    $("#contentInput").val(editorContent);
+                    $("#myForm").submit();
+                });
+			});
+		</script>
     </div>
     <!-- Content wrapper -->
 @endsection

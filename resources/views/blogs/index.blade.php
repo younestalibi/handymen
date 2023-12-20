@@ -28,7 +28,8 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Title</th>
-                                        <th>Status</th>
+                                        <th>Picture</th>
+                                        <th>Generate</th>
                                         <th>Created</th>
                                         <th>Actions</th>
                                     </tr>
@@ -42,6 +43,10 @@
                                             <tr>
                                                 <td>{{ $count++ }}</td>
                                                 <td>{{ Str::limit($blog->title, $limit = 40, $end = '...') }}</td>
+                                                <td class="col-2">
+                                                    <img class="img-fluid" style="width:60px; height:60px; object-fit: contain;"
+                                                        src="{{ asset($blog->picture) }}" />
+                                                </td>
                                                 <td>
                                                     @if(empty($blog->content))
                                                     <span class="badge rounded-pill p-2 bg-primary">In Progress...</span>

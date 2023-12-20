@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('phone');
             $table->text('message')->nullable();
             $table->decimal('price')->nullable();
-            $table->enum('status', ['pending', 'progress', 'done'])->default('pending');;
+            $table->enum('status', ['pending', 'progress', 'done'])->default('pending');
             $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
             $table->timestamps();
         });

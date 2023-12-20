@@ -958,7 +958,16 @@
                                                 <div class="col-md-6 col-xl-4">
                                                     <style>.service-block::before{background-color: #20cfc5 !important;}</style>
                                                     <div class="service-block">
-                                                        <!-- <div class="shape1" ></div>                                                        -->
+                                                        <!-- <div class="shape1" ></div>
+                                                        <div class="service-block_icon" >
+                                                            <div class="icon">
+                                                                <img decoding="async" src="" alt="service_grid_1" />
+                                                            </div>
+                                                        </div> -->
+                                                        <div class="service-block_img" >
+                                                            <img decoding="async" src="{{ asset($blog->picture) }}" alt="medium shot smiley people wearing helmets" />
+                                                        </div>
+                                                        
                                                         <h3 class="box-title">
                                                             <a style="font-size: x-large;" href="{{ route('home-blog-detail',$id=$blog->id) }}" >
                                                                 {{$blog->title}}

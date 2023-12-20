@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\User;
-use App\Models\Category;
+use GuzzleHttp\Client;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use OpenAI\Laravel\Facades\OpenAI;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Storage;
+
 
 class BlogController extends Controller
 {
@@ -28,7 +28,7 @@ class BlogController extends Controller
         $errorMessage = Cache::pull('your_scheduled_task_error');
         $successMessage = Cache::pull('your_scheduled_task_success');
 
-        $blogs = Blog::orderBy('created_at', 'desc')->paginate(3);
+        $blogs = Blog::orderBy('created_at', 'desc')->paginate(10);
         $myProfile = User::find(Auth::user()->id)->Profile;
         return view('blogs.index', compact('myProfile', 'blogs','errorMessage','successMessage'));
     }
@@ -44,14 +44,13 @@ class BlogController extends Controller
         return view('blogs.create', compact('myProfile'));
     }
 
-    public static  function generateNewArticle(Request $request){        
+    public static  function generateNewArticle(){ 
         $blog=Blog::whereNull('content')->first();
-        if(!is_null($blog)){
+        if(!is_null($blog) && !is_null($blog->title)){
             $title=$blog->title;
-            // $imgPrompt = "Create an image that visually represents the essence of '{{$title}}.' Envision a captivating scene that captures the core theme and emotions associated with the given title. Feel free to incorporate diverse elements, colors, and visual elements that align with the subject matter."            ;
+            $imgPrompt = "Generate an image for the article '{{ $blog->title }}'.";
             $wordCount = 1000; 
             $prompt = "Generate an SEO-friendly blog post about {{$title}} containing {{$wordCount}} words. Follow SEO standards with. Output the result within <div id='content'> use <h><p><b>.";
-        
             
             try{
                 $result = OpenAI::chat()->create([
@@ -60,32 +59,42 @@ class BlogController extends Controller
                         ['role' => 'user', 'content' => $prompt],
                     ],
                 ]);
-                // $image=OpenAI::images()->create([
-                //     "prompt"=>$imgPrompt ,
-                //     'n'=>1,
-                //     "size"=>"1024x1024",
-                //     'response_format'=>'url'
-                // ]);
-
-                // $url=$image->data[0]->url;
-            
-                // $imageContents = file_get_contents($url);
-                // $imageName = uniqid() . '.png';
-                // Storage::disk('public')->put('imagesBlogs/' . $imageName, $imageContents);
-
+                
                 if (isset($result->choices[0]->message->content)) {
+                    
                     $blog->content=$result->choices[0]->message->content;
                     $blog->save();
                     Cache::put('your_scheduled_task_success', 'Article generated successfully.');
                 } else {
                     Cache::put('your_scheduled_task_error', 'Error generating article. Please check your API key or try again later.');
-
-                    throw new \Exception("Error: Unable to generate content. Check OpenAI response.");
                 }
             } catch (\Exception $e) {
                 Cache::put('your_scheduled_task_error', $e->getMessage());
-                // return redirect()->back()->withErrors(['error' => $e->getMessage()]);
             }
+            try{
+                $image = OpenAI::images()->create([
+                    "prompt" => $imgPrompt,
+                    'n' => 1,
+                    "size" => "1024x1024",
+                    'response_format' => 'url',
+                    'model'=>"dall-e-2"
+                ]);
+                $url=$image->data[0]->url;
+                if(isset($url)){
+                    $folderPath = public_path('users/blogs');
+                    $filename = pathinfo(parse_url($url, PHP_URL_PATH), PATHINFO_BASENAME);
+                    $imageContent = file_get_contents($url);
+                    file_put_contents($folderPath . '/' . $filename, $imageContent);
+                    $blog->picture='users/blogs/'.$filename;
+                    $blog->save();
+                }else{
+                    Cache::put('your_scheduled_task_error', 'Error generating Image. Please check your API key or try again later.');
+                }
+            }catch (\Exception $e) {
+                Cache::put('your_scheduled_task_error', $e->getMessage());
+            }
+            
+            
         }
     }
     public static  function generateTitles(Request $request){        
@@ -153,9 +162,9 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        echo "<h1>still working it</h1>";
-        // $myProfile = User::find(Auth::user()->id)->Profile;
-        // return view('blogs.edit', compact('blog', 'myProfile'));
+        // echo "<h1>still working it</h1>";
+        $myProfile = User::find(Auth::user()->id)->Profile;
+        return view('blogs.edit', compact('blog', 'myProfile'));
     }
 
     /**
@@ -165,9 +174,32 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'picture' => 'nullable',
+            'status' => 'required'
+        ]);
+
+        $blog = Blog::find($request->id);
+        if ($request->hasFile('picture')) {
+            if (!empty($blog->picture)) {
+                $previousPicturePath = public_path($blog->picture);
+                if (file_exists($previousPicturePath)) {
+                    unlink($previousPicturePath);
+                }
+            }
+            $file = $request->file('picture');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = time() . '.' . $extension;
+            $file->move('users/blogs', $fileName);
+        
+            $validated['picture'] = 'users/blogs/'.$fileName;
+        }
+        $blog->fill($validated)->save();
+        return redirect()->route('blog-index')->with('success', 'New Blog Created successfully');
     }
 
     /**
@@ -178,11 +210,17 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        $service = Blog::findOrFail($id);
-        $service->delete();
+        $blog = Blog::findOrFail($id);
+        if (!empty($blog->picture)) {
+            $previousPicturePath = public_path($blog->picture);
+            if (file_exists($previousPicturePath)) {
+                unlink($previousPicturePath);
+            }
+        }
+        $blog->delete();
         return response()->json([
             'status' => true,
-            'success' => 'Service deleted successfully',
+            'success' => 'Blog deleted successfully',
         ]);
     }
 }

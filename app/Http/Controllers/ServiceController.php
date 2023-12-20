@@ -100,7 +100,6 @@ class ServiceController extends Controller
      */
     public function update(Request $request)
     {
-        // dd($request->all());
         $validated = $request->validate([
             'name' => 'required',
             'category_id' => 'required',
@@ -143,6 +142,12 @@ class ServiceController extends Controller
     public function destroy($id)
     {
         $service = Service::findOrFail($id);
+        if (!empty($service->picture)) {
+            $previousPicturePath = public_path('users/services/' . $service->picture);
+            if (file_exists($previousPicturePath)) {
+                unlink($previousPicturePath);
+            }
+        }
         $service->delete();
         return response()->json([
             'status' => true,
