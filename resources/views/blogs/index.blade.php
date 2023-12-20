@@ -30,6 +30,7 @@
                                         <th>Title</th>
                                         <th>Picture</th>
                                         <th>Generate</th>
+                                        <th>Status</th>
                                         <th>Created</th>
                                         <th>Actions</th>
                                     </tr>
@@ -49,12 +50,13 @@
                                                 </td>
                                                 <td>
                                                     @if(empty($blog->content))
-                                                    <span class="badge rounded-pill p-2 bg-primary">In Progress...</span>
+                                                    <span class="badge rounded-pill p-2 bg-primary">In-Progress...</span>
                                                     @else
-                                                    <span class="badge rounded-pill p-2 bg-success">Posted</span>
+                                                    <span class="badge rounded-pill p-2 bg-success">Generated!</span>
                                                     @endif
                                                       
                                                 </td>
+                                                <td>{{ $blog->status }}</td>
                                                 <td>{{ $blog->created_at->diffforhumans() }}</td>
                                                 <td>
                                                     <a href="{{ route('blog-edit', ['blog' => $blog->id]) }}"

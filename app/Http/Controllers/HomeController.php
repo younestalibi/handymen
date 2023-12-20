@@ -68,7 +68,7 @@ class HomeController extends Controller
     }
 
     public function blogs(){
-        $blogs = Blog::orderBy('created_at','desc')->whereNotNull('content')->paginate(6);
+        $blogs = Blog::orderBy('created_at','desc')->whereNotNull('content')->where('status','Posted')->paginate(6);
         return view('home.blogs', compact('blogs'));
 
     }
