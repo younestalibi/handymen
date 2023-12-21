@@ -77,7 +77,7 @@ class BlogController extends Controller
                     'n' => 1,
                     "size" => "1024x1024",
                     'response_format' => 'url',
-                    'model'=>"dall-e-2"
+                    'model'=>"dall-e-2",
                 ]);
                 $url=$image->data[0]->url;
                 if(isset($url)){
