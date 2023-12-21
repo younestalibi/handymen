@@ -18,6 +18,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('php artisan inspire')->everyMinute();
         $schedule->call([BlogController::class, 'generateNewArticle'])->everyMinute();
+        $schedule->call([BlogController::class, 'generateNewArticle'])->everyMinute();
+    
 
     }
 
