@@ -18,7 +18,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $bookings =  Booking::orderBy('created_at', 'desc')->paginate(3);
+        $bookings =  Booking::orderBy('created_at', 'desc')->paginate(6);
         $myProfile = User::find(Auth::user()->id)->Profile;
         return view('booking.index', compact('myProfile', 'bookings'));
     }

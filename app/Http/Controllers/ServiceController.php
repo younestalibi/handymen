@@ -21,7 +21,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::paginate(3);
+        $services = Service::paginate(6);
         $myProfile = User::find(Auth::user()->id)->Profile;
         return view('service.index', compact('myProfile', 'services'));
     }

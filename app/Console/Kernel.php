@@ -17,8 +17,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('php artisan inspire')->everyMinute();
-        $schedule->call([BlogController::class, 'generateNewArticle'])->everyMinute();
-        $schedule->call([BlogController::class, 'generateNewArticle'])->everyMinute();
+        $schedule->call([BlogController::class, 'generateNewArticle']);
+        $schedule->call([BlogController::class, 'generateNewArticle']);
     
 
     }
