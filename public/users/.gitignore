@@ -1,4 +1,0 @@
-# Ignore these folders in the "images" directory
-public/blogs/*.png
-public/services/*.png
-public/users/*.png

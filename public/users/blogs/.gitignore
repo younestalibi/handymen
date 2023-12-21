@@ -1,0 +1,6 @@
+# Ignore all image files in the "blogs" directory
+*.png
+*.jpg
+*.jpeg
+*.gif
+# Add more image file extensions if needed
