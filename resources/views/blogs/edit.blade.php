@@ -57,18 +57,7 @@
                                         @enderror
                                     </div>
 
-                                    <input type="hidden" name="content" id="contentInput">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-lg-12 nopadding">
-                                                        <textarea id="txtEditor" contenteditable="true"></textarea> 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
 
                                
                                     <div
@@ -98,6 +87,20 @@
                                             @enderror
                                         </div>
                                     </div>
+
+                                    <input type="hidden" name="content" id="contentInput">
+                                    <div class="container-fluid my-3">
+                                        <div class="row">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-12 nopadding">
+                                                        <textarea id="txtEditor" contenteditable="true"></textarea> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="col-md-12 col-sm-12 mb-3 text-center">
                                         <button class="btn btn-info" id='submitButton'>
                                             <span class="tf-icons bx bxs-save"></span> &nbsp; Update
@@ -115,7 +118,11 @@
         <!-- / Content -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script>
-            var jQueryFirst = jQuery.noConflict(true);
+            $(document).ready(function(){
+                var jQueryFirst = jQuery.noConflict(true);
+            })
+            
+            
         </script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script src="{{asset('textRich/editor.js')}}"></script>
