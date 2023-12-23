@@ -53,6 +53,14 @@
                                         @enderror
                                     </div>
 
+                                    <div class="col-md-4 col-sm-12 mb-3 feature-extra">
+                                        <label for="floatingTextarea2">Message</label>
+                                        <textarea disabled name="message" id="message" class="form-control "
+                                            placeholder="message"
+                                            style="max-height:120px ;height: 100px">
+                                            {{ old('message', $booking->message) }}
+                                        </textarea>
+                                    </div>
 
                                     <div class="col-md-12 col-sm-12 mb-3 text-center">
                                         <button type="submit" class="btn btn-info">
