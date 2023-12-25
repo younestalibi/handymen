@@ -46,7 +46,7 @@
                                                 <td>{{ Str::limit($blog->title, $limit = 40, $end = '...') }}</td>
                                                 <td class="col-2">
                                                     <img class="img-fluid" style="width:60px; height:60px; object-fit: contain;"
-                                                        src="{{ asset($blog->picture) }}" />
+                                                        src="{{ asset($blog->picture?$blog->picture:'assets/img/illustrations/loading.gif') }}" />
                                                 </td>
                                                 <td>
                                                     @if(empty($blog->content))

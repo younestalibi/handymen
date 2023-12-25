@@ -107,5 +107,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 });
 
 
-Route::get('update', [BlogController::class, 'generateNewArticle']);
+Route::get('/update', [BlogController::class, 'generateNewArticle']);
 Route::get('/generate-titles', [BlogController::class, 'generateTitles'])->name('generate.titles');

@@ -84,7 +84,7 @@ $(document).ready(function () {
     });
     $('#generate').click(function () {
         var keywords = $('#keyword').val();
-        $('#generate').prop('disabled', true).text('Loading...');
+        $('#generate').prop('disabled', true).text('Generating...');
 
         $.ajax({
             type: 'GET',
